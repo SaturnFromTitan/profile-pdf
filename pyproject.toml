@@ -1,0 +1,7 @@
+[project]
+name = "profile"
+version = "0.1.0"
+description = "Generating my profile as PDF using HTML/CSS and Weasyprint"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
