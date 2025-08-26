@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #E58900;
+  --secondary-color:  #22547A;
+  --light-color: #656C81;
+  --ultra-light-color: #F0F0F0;
+}
+
+/* Background colors */
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-light {
+  background-color: var(--light-color);
+}
+
+.bg-ultra-light {
+  background-color: var(--ultra-light-color);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+.text-ultra-light {
+  color: var(--ultra-light-color);
+}

@@ -115,6 +115,10 @@ class Profile(BaseModel):
                 TechnologySkill(name="Pandas", years=5),
                 TechnologySkill(name="TypeScript", years=2),
                 TechnologySkill(name="HTML, CSS (Bootstrap, Tailwind)", years=3),
+                TechnologySkill(
+                    name="Test-Driven Development (unit, integration, end to end, load testing, etc.)",
+                    years=9,
+                ),
             ],
         ),
         CoreSkill(
@@ -124,25 +128,24 @@ class Profile(BaseModel):
                 TechnologySkill(name="AWS Serverless", years=2),
                 TechnologySkill(name="CI/CD", years=7),
                 TechnologySkill(name="Docker", years=7),
-                TechnologySkill(name="Infrastructure as Code", years=5),
+                TechnologySkill(name="Infrastructure as Code (IaC)", years=5),
                 TechnologySkill(name="Kubernetes", years=1),
             ],
         ),
         CoreSkill(
             subject="Others",
             technologies=[
-                TechnologySkill(name="SQL Databases (PostgreSQL)", years=6),
+                TechnologySkill(
+                    name="SQL Databases (PostgreSQL, MariaDB, MSSQL, etc.)", years=6
+                ),
                 TechnologySkill(
                     name="NoSQL Databases (MongoDB, DocumentDB, DynamoDB)", years=3
                 ),
                 TechnologySkill(name="Microservices", years=6),
                 TechnologySkill(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 TechnologySkill(name="GraphQL APIs", years=2),
-                TechnologySkill(name="Event-driven Software Architectures", years=3),
-                TechnologySkill(
-                    name="Testing (unit, integration, end to end, load testing)",
-                    years=9,
-                ),
+                TechnologySkill(name="Serverless Architectures", years=2),
+                TechnologySkill(name="Event-driven Software Architectures", years=4),
             ],
         ),
     ]
