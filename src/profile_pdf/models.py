@@ -1,4 +1,16 @@
-from pydantic import BaseModel, Field
+import pathlib
+from enum import StrEnum
+
+from pydantic import BaseModel
+
+from . import MEDIA_DIR
+
+
+class LanguageProficiency(StrEnum):
+    """Language proficiency"""
+
+    NATIVE_SPEAKER = "Native speaker"
+    BUSINESS_FLUENT = "Business fluent"
 
 
 class Language(BaseModel):
@@ -16,10 +28,10 @@ class Contact(BaseModel):
     linkedin: str
 
 
-class SocialMedia(BaseModel):
+class Links(BaseModel):
     """Social media profiles"""
 
-    medium_blog: str
+    medium: str
     github: str
 
 
@@ -31,90 +43,112 @@ class PersonalInfo(BaseModel):
     languages: list[Language]
 
 
-class Skills(BaseModel):
+class TechnologySkill(BaseModel):
+    """Technology"""
+
+    name: str
+    years: int
+
+
+class CoreSkill(BaseModel):
     """Skills and experience"""
 
-    code: list[str] = Field(description="Programming and development skills")
-    devops: list[str] = Field(description="DevOps and infrastructure skills")
-    others: list[str] = Field(description="Other technical skills")
+    subject: str
+    technologies: list[TechnologySkill]
 
 
 class Certification(BaseModel):
     """Professional certification"""
 
     name: str
-    code: str | None = None
+    code: str
 
 
 class Profile(BaseModel):
     """Complete profile information"""
 
-    # Basic info
-    name: str = "Martin Winkel"
-    title: str = "Lead Software Engineer & Certified AWS Solutions Architect"
-    subtitle: str = (
-        "Over 10 years of experience • Product mindset • Strong communication"
-    )
+    # Images
+    profile_image_path: pathlib.Path = MEDIA_DIR / "photo.jpeg"
+    icon_paths: list[pathlib.Path] = [
+        MEDIA_DIR / "logo-aws.png",
+        MEDIA_DIR / "logo-python.png",
+    ]
 
     # Personal information
-    address: str = "Berlin (Friedrichshain)"
+    name: str = "Martin Winkel"
+    location: str = "Berlin (Prenzlauer Berg)"
     languages: list[Language] = [
-        Language(language="German", proficiency="Native speaker"),
-        Language(language="English", proficiency="Business fluent"),
+        Language(language="German", proficiency=LanguageProficiency.NATIVE_SPEAKER),
+        Language(language="English", proficiency=LanguageProficiency.BUSINESS_FLUENT),
     ]
 
     # Contact information
     contact: Contact = Contact(
-        phone="+49 160 97064381",
+        phone="upon request",
         email="martin@pythonation.de",
         linkedin="@martin-winkel",
     )
 
-    # Social media
-    social: SocialMedia = SocialMedia(
-        medium_blog="@SaturnFromTitan", github="@SaturnFromTitan"
+    # Links to other platforms
+    links: Links = Links(
+        medium="@SaturnFromTitan",
+        github="@SaturnFromTitan",
     )
 
     # Professional summary
     summary: list[str] = [
-        "With over 10 years of experience, combining deep technical expertise, a strong product mindset, and excellent communication skills.",
+        "<strong>Lead Software Engineer</strong> and <strong>Certified AWS Solutions Architect</strong> with over 10 years of experience. Combining deep technical expertise, a strong product mindset, and excellent communication skills.",
         "In 2017, I co-founded and led a software development consultancy focusing on digital transformation. I built and supervised applications of various sizes and business domains for clients ranging from start-ups to DAX companies.",
         "Since 2023, I have been working as a freelance developer and advisor again.",
     ]
 
     # Skills
-    skills: Skills = Skills(
-        code=[
-            "Python: 10 years",
-            "Python Web Frameworks (FastAPI, Django, Flask): 7 years",
-            "Pydantic: 5 years",
-            "Pandas: 5 years",
-            "HTML, CSS (Bootstrap, Tailwind): 3 years",
-            "Test-driven Development: 7 years",
-        ],
-        devops=[
-            "Amazon Web Services (AWS): 6 years",
-            "AWS Serverless: 2 years",
-            "CI/CD: 7 years",
-            "Docker: 7 years",
-            "Infrastructure as Code: 5 years",
-            "Kubernetes: 1 year",
-        ],
-        others=[
-            "SQL Databases (PostgreSQL): 6 years",
-            "NoSQL Databases (MongoDB, DocumentDB, DynamoDB): 3 years",
-            "Microservices: 6 years",
-            "REST APIs (incl. OpenAPI/Swagger): 6 years",
-            "GraphQL APIs: 2 years",
-            "Event-driven Software Architectures: 3 years",
-        ],
-    )
+    core_skills: list[CoreSkill] = [
+        CoreSkill(
+            subject="Code",
+            technologies=[
+                TechnologySkill(name="Python", years=10),
+                TechnologySkill(
+                    name="Python Web Frameworks (FastAPI, Django, Flask)", years=7
+                ),
+                TechnologySkill(name="Pydantic", years=5),
+                TechnologySkill(name="Pandas", years=5),
+                TechnologySkill(name="TypeScript", years=2),
+                TechnologySkill(name="HTML, CSS (Bootstrap, Tailwind)", years=3),
+            ],
+        ),
+        CoreSkill(
+            subject="DevOps",
+            technologies=[
+                TechnologySkill(name="Amazon Web Services (AWS)", years=6),
+                TechnologySkill(name="AWS Serverless", years=2),
+                TechnologySkill(name="CI/CD", years=7),
+                TechnologySkill(name="Docker", years=7),
+                TechnologySkill(name="Infrastructure as Code", years=5),
+                TechnologySkill(name="Kubernetes", years=1),
+            ],
+        ),
+        CoreSkill(
+            subject="Others",
+            technologies=[
+                TechnologySkill(name="SQL Databases (PostgreSQL)", years=6),
+                TechnologySkill(
+                    name="NoSQL Databases (MongoDB, DocumentDB, DynamoDB)", years=3
+                ),
+                TechnologySkill(name="Microservices", years=6),
+                TechnologySkill(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
+                TechnologySkill(name="GraphQL APIs", years=2),
+                TechnologySkill(name="Event-driven Software Architectures", years=3),
+                TechnologySkill(
+                    name="Testing (unit, integration, end to end, load testing)",
+                    years=9,
+                ),
+            ],
+        ),
+    ]
 
     # Certifications
     certifications: list[Certification] = [
         Certification(name="AWS Solutions Architect - Associate", code="SAA-C03"),
         Certification(name="AWS Certified Developer - Associate", code="DVA-C02"),
     ]
-
-    # Profile image path
-    profile_image: str = "/mnt/data/profile_martin_winkel.jpg"
