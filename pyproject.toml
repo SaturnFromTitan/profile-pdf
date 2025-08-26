@@ -1,5 +1,5 @@
 [project]
-name = "profile"
+name = "profile-pdf"
 version = "0.1.0"
 description = "Generates my profile as a PDF"
 readme = "README.md"
@@ -14,15 +14,45 @@ requires = ["uv_build>=0.8.13,<0.9.0"]
 build-backend = "uv_build"
 
 [project.scripts]
-generate_pdf = "profile.generate_pdf:main"
+generate-pdf = "profile_pdf.generate:main"
 
 [dependency-groups]
 dev = [
-    # linters
+    # lint
+    "pre-commit>=3.5.0",
     "mypy>=1.17.1",
     "ruff>=0.12.10",
     # tests
     "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "--strict-markers",
+]
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+sort = "Miss"
+skip_covered = true
+skip_empty = true
+exclude_also = [
+    # type check imports don't need to be covered
+    "if (typing\\.)?TYPE_CHECKING:",
+
+    # defensive assertion code doesn't need to be covered
+    "raise NotImplementedError",
+
+    # script code doesn't run in production so it doesn't need to be covered
+    "if __name__ == .__main__.:",
+
+    # abstract methods don't need to be covered
+    "@(abc\\.)?abstractmethod",
 ]
 
 [tool.mypy]
@@ -45,6 +75,9 @@ warn_redundant_casts = true
 warn_unused_configs = true
 warn_unreachable = true
 warn_no_return = true
+plugins = [
+  "pydantic.mypy",
+]
 exclude = [
   "build",
   ".venv",

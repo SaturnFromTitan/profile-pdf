@@ -37,5 +37,4 @@ RUN uv sync \
 RUN mkdir -p /app/output
 
 # Set the default command
-# TODO: get 'uv run generate-pdf' to work
-CMD ["uv", "run", "--no-dev", "python", "src/profile/generate_pdf.py"]
+CMD ["uv", "run", "--no-dev", "generate-pdf"]
