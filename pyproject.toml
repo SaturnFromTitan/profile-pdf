@@ -1,17 +1,94 @@
 [project]
 name = "profile"
 version = "0.1.0"
-description = "Generating my profile as PDF using HTML/CSS and Weasyprint"
+description = "Generates my profile as a PDF"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.12.*"  # python doesn't follow semantic versioning, so we lock the minor version
 dependencies = [
     "pydantic>=2.11.7",
     "weasyprint>=66.0",
 ]
 
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+[project.scripts]
+generate_pdf = "profile.generate_pdf:main"
+
 [dependency-groups]
 dev = [
+    # linters
     "mypy>=1.17.1",
-    "pytest>=8.4.1",
     "ruff>=0.12.10",
+    # tests
+    "pytest>=8.4.1",
 ]
+
+[tool.mypy]
+python_version = "3.12"
+allow_redefinition = false
+check_untyped_defs = true
+disallow_untyped_decorators = true
+disallow_any_explicit = false
+disallow_any_generics = false
+disallow_untyped_calls = true
+ignore_errors = false
+ignore_missing_imports = true
+implicit_reexport = false
+strict_optional = true
+strict_equality = true
+show_traceback = true
+no_implicit_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unreachable = true
+warn_no_return = true
+exclude = [
+  "build",
+  ".venv",
+]
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/configuration/
+target-version = "py312"
+output-format = "full"
+
+[tool.ruff.lint]
+# list of all rules: https://docs.astral.sh/ruff/rules/
+select = ["ALL"]
+ignore = [
+  "ANN",  # flake8-annotations: we're fine with what mypy gives us
+  "ARG",  # flake8-unused-arguments: often yields false-negatives when used with inheritence
+  "BLE001",  # blind-except: catching `Exception` is fine as long as you don't `pass`
+  "COM812",  # missing-trailing-comma: trailing commas are managed by the formatter
+  "D",  # pydocstyle: we don't care too much about docstrings
+  "DJ",  # flake8-django: we don't use Django
+  "E501", # line-too-long: let ruff format handle line length (sometimes it produces lines longer than the limit), and ruff shouldn't complain about it
+  "EM",  # flake8-errmsg: raw strings in exceptions are fine
+  "F722",  # forward-annotation-syntax-error: https://github.com/PyCQA/pyflakes/issues/542
+  "FBT001",  # boolean-type-hint-positional-argument: FBT003 is sufficient
+  "FBT002",  # boolean-default-value-positional-argument: FBT003 is sufficient
+  "FIX",  # flake8-fixmes: we use todos & fixmes for follow-up and long-term issues
+  "ISC001",  # single-line-implicit-string-concatenation: https://github.com/astral-sh/ruff/issues/8272
+  "N805",  # invalid-first-argument-name-for-method: incompatible with pydantic validations
+  "PD901",  # pandas-df-variable-name: within a function where there's only one dataframe, it's convenient to call it df
+  "PTH123",  # pathlib-open: It's ok to use open(...) instead of Pathlib(...).open()
+  "RET504",  # unnecessary-assign: unnecessary assigns are sometimes helpful for debuggers
+  "RET505",  # superfluous-else-return: sometimes the `else` inproves readability
+  "RET506",  # superfluous-else-raise: sometimes the `else` inproves readability
+  "RET507",  # superfluous-else-continue: sometimes the `else` inproves readability
+  "RET508",  # superfluous-else-break: sometimes the `else` inproves readability
+  "S104",  # hardcoded-bind-all-interfaces: we allow binding to 0.0.0.0
+  "SIM108",  # if-else-block-instead-of-if-exp: ternary operator isn't always preferred
+  "TCH",  # flake8-type-checking: can conflict with fastapi's typing magic
+  "TD",  # flake8-todos: we don't want to formalise todos
+  "TRY002",  # raise-vanilla-class: in services, we're fine with raising broad exceptions
+  "TRY003",  # raise-vanilla-args: we're ok with long strings in exceptions
+  "TRY004",  # type-check-without-type-error: too many false-negatives
+  "TRY300",  # try-consider-else: else statements can be harder to read
+]
+
+[tool.ruff.lint.pylint]
+max-args = 8

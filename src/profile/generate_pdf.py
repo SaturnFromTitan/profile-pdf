@@ -4,12 +4,20 @@ Script to generate PDF from HTML template using WeasyPrint
 """
 
 import os
+import pathlib
 import sys
+from typing import Union
 from pathlib import Path
 from weasyprint import HTML, CSS
 from weasyprint.text.fonts import FontConfiguration
 
-def generate_pdf(html_file, css_file, output_file):
+PACKAGE_DIR = pathlib.Path(__file__).parent
+TEMPLATES_DIR = PACKAGE_DIR / "templates"
+STYLES_DIR = PACKAGE_DIR / "styles"
+REPO_ROOT = PACKAGE_DIR.parent.parent
+OUTPUT_DIR = REPO_ROOT / "output"
+
+def generate_pdf(html_file: Union[str, Path], css_file: Union[str, Path], output_file: Union[str, Path]) -> bool:
     """Generate PDF from HTML and CSS files"""
     try:
         # Read HTML file
@@ -40,12 +48,12 @@ def generate_pdf(html_file, css_file, output_file):
         print(f"Error generating PDF: {e}", file=sys.stderr)
         return False
 
-def main():
+def main() -> None:
     """Main function"""
     # File paths
-    html_file = "template.html"
-    css_file = "tailwind.css"
-    output_file = "output/profile.pdf"
+    html_file = TEMPLATES_DIR / "template.html"
+    css_file = STYLES_DIR / "tailwind.css"
+    output_file = OUTPUT_DIR / "profile.pdf"
     
     # Check if input files exist
     if not os.path.exists(html_file):

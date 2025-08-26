@@ -20,15 +20,22 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 
 # Install Python dependencies using uv
-RUN uv sync --frozen
+RUN uv sync \
+    --locked \
+    --no-dev \
+    --no-install-project
 
 # Copy application files
-COPY template.html .
-COPY tailwind.css .
-COPY generate_pdf.py .
+COPY src/ ./src/
+COPY README.md ./
+RUN uv sync \
+    --locked \
+    --no-dev \
+    --no-editable
 
 # Create output directory
 RUN mkdir -p /app/output
 
 # Set the default command
-CMD ["uv", "run", "python", "generate_pdf.py"]
+# TODO: get 'uv run generate-pdf' to work
+CMD ["uv", "run", "--no-dev", "python", "src/profile/generate_pdf.py"]
