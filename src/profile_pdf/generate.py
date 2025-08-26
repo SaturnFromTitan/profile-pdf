@@ -3,8 +3,11 @@ import pathlib
 import sys
 from pathlib import Path
 
+from jinja2 import Environment, FileSystemLoader
 from weasyprint import CSS, HTML
 from weasyprint.text.fonts import FontConfiguration
+
+from .models import Profile
 
 logger = logging.getLogger(__name__)
 
@@ -16,15 +19,19 @@ OUTPUT_DIR = REPO_ROOT / "output"
 
 
 def main() -> None:
-    """Main function"""
     # File paths
-    html_file = TEMPLATES_DIR / "template.html"
     css_file = STYLES_DIR / "tailwind.css"
     output_file = OUTPUT_DIR / "profile.pdf"
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
+    # Create profile instance
+    profile = Profile()
+
+    # Generate HTML content from profile model
+    html_content = _generate_html_from_profile(profile)
+
     # Generate PDF
-    success = _generate_pdf(html_file, css_file, output_file)
+    success = _generate_pdf(html_content, css_file, output_file)
 
     if success:
         sys.exit(0)
@@ -32,17 +39,23 @@ def main() -> None:
         sys.exit(1)
 
 
+def _generate_html_from_profile(profile: Profile) -> str:
+    """Generate HTML content from profile model using Jinja2 template"""
+    # Set up Jinja2 environment
+    env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
+    template = env.get_template("profile.html")
+
+    # Render template with profile data
+    return template.render(profile=profile)
+
+
 def _generate_pdf(
-    html_file: str | Path,
+    html_content: str,
     css_file: str | Path,
     output_file: str | Path,
 ) -> bool:
-    """Generate PDF from HTML and CSS files"""
+    """Generate PDF from HTML content and CSS file"""
     try:
-        # Read HTML file
-        with open(html_file, encoding="utf-8") as f:
-            html_content = f.read()
-
         # Read CSS file
         with open(css_file, encoding="utf-8") as f:
             css_content = f.read()
