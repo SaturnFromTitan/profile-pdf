@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Martin Winkel — CV (Tailwind)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="tailwind.css">
+  <style>
+    @page { size: A4; margin: 0 }
+    body { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif }
+    /* Utilities WeasyPrint cares about for print */
+    .page { min-height: 297mm }
+  </style>
+</head>
+<body class="text-slate-900">
+  <div class="grid grid-cols-[15rem_1fr] page">
+    <!-- Sidebar -->
+    <aside class="bg-slate-800 text-white px-5 py-7">
+      <img src="/mnt/data/profile_martin_winkel.jpg" alt="Portrait of Martin Winkel" class="w-full rounded mb-8" />
+      
+      <section class="mb-6">
+        <h2 class="uppercase text-amber-400 text-xs tracking-wide font-bold border-l-4 border-amber-400 pl-2 mb-2">Personal Information</h2>
+        <p class="text-sky-100 text-sm font-semibold mt-1">Name</p>
+        <p class="text-slate-100 text-sm">Martin Winkel</p>
+        <p class="text-sky-100 text-sm font-semibold mt-2">Address</p>
+        <p class="text-slate-100 text-sm">Berlin (Friedrichshain)</p>
+        <p class="text-sky-100 text-sm font-semibold mt-2">Languages</p>
+        <p class="text-slate-100 text-sm">German: Native speaker<br>English: Business fluent</p>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="uppercase text-amber-400 text-xs tracking-wide font-bold border-l-4 border-amber-400 pl-2 mb-2">Contact</h2>
+        <p class="text-sky-100 text-sm font-semibold mt-1">Phone</p>
+        <p class="text-slate-100 text-sm">+49 160 97064381</p>
+        <p class="text-sky-100 text-sm font-semibold mt-2">E‑Mail</p>
+        <p class="text-slate-100 text-sm">martin@pythonation.de</p>
+        <p class="text-sky-100 text-sm font-semibold mt-2">LinkedIn</p>
+        <p class="text-slate-100 text-sm">@martin-winkel</p>
+      </section>
+
+      <section>
+        <h2 class="uppercase text-amber-400 text-xs tracking-wide font-bold border-l-4 border-amber-400 pl-2 mb-2">Others</h2>
+        <p class="text-sky-100 text-sm font-semibold">Blog (Medium)</p>
+        <p class="text-slate-100 text-sm mb-1">@SaturnFromTitan</p>
+        <p class="text-sky-100 text-sm font-semibold">GitHub</p>
+        <p class="text-slate-100 text-sm">@SaturnFromTitan</p>
+      </section>
+    </aside>
+
+    <!-- Main -->
+    <main class="px-8 py-7 relative">
+      <header class="flex justify-between items-start border-b-4 border-amber-400 pb-6 mb-6">
+        <div>
+          <h1 class="text-3xl font-extrabold leading-tight">Lead Software Engineer &amp; Certified AWS Solutions Architect</h1>
+          <p class="text-slate-600 text-base mt-1">Over 10 years of experience • Product mindset • Strong communication</p>
+        </div>
+      </header>
+
+      <section class="text-[10.5pt] leading-relaxed space-y-2">
+        <p>With over 10 years of experience, combining deep technical expertise, a strong product mindset, and excellent communication skills.</p>
+        <p>In 2017, I co-founded and led a software development consultancy focusing on digital transformation. I built and supervised applications of various sizes and business domains for clients ranging from start-ups to DAX companies.</p>
+        <p>Since 2023, I have been working as a freelance developer and advisor again.</p>
+      </section>
+
+      <h2 class="text-xl text-amber-600 font-extrabold mt-7 mb-2">Core Skills</h2>
+
+      <h3 class="font-extrabold text-slate-900 mt-3 mb-1">Code</h3>
+      <div class="columns-2 gap-10 text-[10.5pt]">
+        <p class="break-inside-avoid"><span class="font-semibold">Python:</span> 10 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Python Web Frameworks</span> (FastAPI, Django, Flask): 7 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Pydantic:</span> 5 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Pandas:</span> 5 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">HTML, CSS</span> (Bootstrap, Tailwind): 3 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Test-driven Development:</span> 7 years</p>
+      </div>
+
+      <h3 class="font-extrabold text-slate-900 mt-4 mb-1">DevOps</h3>
+      <div class="columns-2 gap-10 text-[10.5pt]">
+        <p class="break-inside-avoid"><span class="font-semibold">Amazon Web Services (AWS):</span> 6 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">AWS Serverless:</span> 2 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">CI/CD:</span> 7 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Docker:</span> 7 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Infrastructure as Code:</span> 5 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Kubernetes:</span> 1 year</p>
+      </div>
+
+      <h3 class="font-extrabold text-slate-900 mt-4 mb-1">Others</h3>
+      <div class="columns-2 gap-10 text-[10.5pt]">
+        <p class="break-inside-avoid"><span class="font-semibold">SQL Databases (PostgreSQL):</span> 6 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">NoSQL Databases</span> (MongoDB, DocumentDB, DynamoDB): 3 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Microservices:</span> 6 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">REST APIs</span> (incl. OpenAPI/Swagger): 6 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">GraphQL APIs:</span> 2 years</p>
+        <p class="break-inside-avoid"><span class="font-semibold">Event-driven Software Architectures:</span> 3 years</p>
+      </div>
+
+      <h2 class="text-xl text-amber-600 font-extrabold mt-6 mb-2">Certifications</h2>
+      <p class="text-[11pt]">AWS Solutions Architect – Associate (SAA‑C03)</p>
+      <p class="text-[11pt]">AWS Certified Developer – Associate (DVA‑C02)</p>
+
+      <div class="absolute bottom-6 right-6 text-slate-500 text-[9pt]">1</div>
+    </main>
+  </div>
+</body>
+</html>

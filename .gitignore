@@ -192,3 +192,7 @@ node_modules/
 *.swo
 *~
 # End Generation Here
+
+tailwind.css
+profile.pdf
+output/
