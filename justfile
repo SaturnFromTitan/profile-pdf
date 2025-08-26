@@ -26,11 +26,10 @@ set shell := ["bash", "-c"]
 
 # build minified tailwind.css
 build-css:
-    # TODO: make this work without input.css
-    npx @tailwindcss/cli -i ./input.css -o ./tailwind.css --minify
+    echo '@import "tailwindcss";' | npx @tailwindcss/cli -i - -o ./src/profile_pdf/styles/tailwind.css --minify
 
 # generate PDF from HTML template using Docker
-generate-pdf:
+generate-pdf: build-css
     docker build -t pdf-generator .
     docker run --rm -v "$(pwd)/output:/app/output" pdf-generator
     @echo "PDF generation complete! Check the output/ directory for your PDF file."

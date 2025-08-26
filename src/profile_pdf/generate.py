@@ -24,7 +24,7 @@ def main() -> None:
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # Generate PDF
-    success = generate_pdf(html_file, css_file, output_file)
+    success = _generate_pdf(html_file, css_file, output_file)
 
     if success:
         sys.exit(0)
@@ -32,7 +32,7 @@ def main() -> None:
         sys.exit(1)
 
 
-def generate_pdf(
+def _generate_pdf(
     html_file: str | Path,
     css_file: str | Path,
     output_file: str | Path,
