@@ -58,7 +58,6 @@ def _generate_pdf(
         html_doc.write_pdf(
             output_file,
             stylesheets=[
-                CSS(STYLES_DIR / "tailwind.css"),
                 CSS(STYLES_DIR / "custom.css"),
             ],
             font_config=font_config,

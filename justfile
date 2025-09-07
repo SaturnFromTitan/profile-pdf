@@ -1,6 +1,7 @@
 set fallback := true
 set shell := ["bash", "-c"]
 
+# remove files created by tooling and packaging
 @clean:
   rm -rf output
   rm -rf dist
@@ -11,7 +12,10 @@ set shell := ["bash", "-c"]
   rm -rf .pytest_cache
   rm -rf **/*/__pycache__
   rm -rf **/__pycache__
+  rm -rf .mypy_cache
   rm -rf **/.mypy_cache
+  rm -rf .ruff_cache
+  rm -rf **/.ruff_cache
   rm -rf htmlcov
   rm -f docker/requirements.txt
   rm -f .coverage
@@ -22,20 +26,16 @@ set shell := ["bash", "-c"]
 @lint:
   uv run pre-commit run --all-files
 
+# run python tests
 @test *ARGS:
   uv run pytest {{ ARGS }}
 
-# build minified tailwind.css and flatten with PostCSS
-@build-css:
-  echo '@import "tailwindcss";' | npx @tailwindcss/cli -i - -o ./src/profile_pdf/styles/tailwind.temp.css
-  npx postcss ./src/profile_pdf/styles/tailwind.temp.css -o ./src/profile_pdf/styles/tailwind.css
-  rm ./src/profile_pdf/styles/tailwind.temp.css
-
 # generate PDF from HTML template using Docker
-@generate-pdf: build-css && open
+@generate-pdf: && open
   docker build -t pdf-generator .
   docker run --rm -v "$(pwd)/output:/app/output" pdf-generator
   @echo "PDF generation complete! Check the output/ directory for your PDF file."
 
+# open the generated PDF
 @open:
   open output/profile.pdf

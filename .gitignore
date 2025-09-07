@@ -191,6 +191,5 @@ node_modules/
 # End Generation Here
 
 *.temp.css
-tailwind.css
 profile.pdf
 output/
