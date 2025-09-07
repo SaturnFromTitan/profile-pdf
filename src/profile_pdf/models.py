@@ -17,15 +17,7 @@ class Language(BaseModel):
     """Language proficiency information"""
 
     language: str
-    proficiency: str
-
-
-class Contact(BaseModel):
-    """Contact information"""
-
-    phone: str
-    email: str
-    linkedin: str
+    proficiency: LanguageProficiency
 
 
 class Links(BaseModel):
@@ -35,15 +27,7 @@ class Links(BaseModel):
     github: str
 
 
-class PersonalInfo(BaseModel):
-    """Personal information section"""
-
-    name: str
-    address: str
-    languages: list[Language]
-
-
-class TechnologySkill(BaseModel):
+class Technology(BaseModel):
     """Technology"""
 
     name: str
@@ -54,7 +38,7 @@ class CoreSkill(BaseModel):
     """Skills and experience"""
 
     subject: str
-    technologies: list[TechnologySkill]
+    technologies: list[Technology]
 
 
 class Certification(BaseModel):
@@ -70,8 +54,8 @@ class Profile(BaseModel):
     # Images
     profile_image_path: pathlib.Path = MEDIA_DIR / "photo.jpeg"
     icon_paths: list[pathlib.Path] = [
-        MEDIA_DIR / "logo-aws.png",
         MEDIA_DIR / "logo-python.png",
+        MEDIA_DIR / "logo-aws.png",
     ]
 
     # Personal information
@@ -83,11 +67,9 @@ class Profile(BaseModel):
     ]
 
     # Contact information
-    contact: Contact = Contact(
-        phone="upon request",
-        email="martin@pythonation.de",
-        linkedin="@martin-winkel",
-    )
+    phone: str = "(hidden)"
+    email: str = "martin@pythonation.de"
+    linkedin: str = "@martin-winkel"
 
     # Links to other platforms
     links: Links = Links(
@@ -107,15 +89,15 @@ class Profile(BaseModel):
         CoreSkill(
             subject="Code",
             technologies=[
-                TechnologySkill(name="Python", years=10),
-                TechnologySkill(
+                Technology(name="Python", years=10),
+                Technology(
                     name="Python Web Frameworks (FastAPI, Django, Flask)", years=7
                 ),
-                TechnologySkill(name="Pydantic", years=5),
-                TechnologySkill(name="Pandas", years=5),
-                TechnologySkill(name="TypeScript", years=2),
-                TechnologySkill(name="HTML, CSS (Bootstrap, Tailwind)", years=3),
-                TechnologySkill(
+                Technology(name="Pydantic", years=5),
+                Technology(name="Pandas", years=5),
+                Technology(name="TypeScript", years=2),
+                Technology(name="HTML, CSS (Bootstrap, Tailwind)", years=3),
+                Technology(
                     name="Test-Driven Development (unit, integration, end to end, load testing, etc.)",
                     years=9,
                 ),
@@ -124,28 +106,28 @@ class Profile(BaseModel):
         CoreSkill(
             subject="DevOps",
             technologies=[
-                TechnologySkill(name="Amazon Web Services (AWS)", years=6),
-                TechnologySkill(name="AWS Serverless", years=2),
-                TechnologySkill(name="CI/CD", years=7),
-                TechnologySkill(name="Docker", years=7),
-                TechnologySkill(name="Infrastructure as Code (IaC)", years=5),
-                TechnologySkill(name="Kubernetes", years=1),
+                Technology(name="Amazon Web Services (AWS)", years=6),
+                Technology(name="AWS Serverless", years=2),
+                Technology(name="CI/CD", years=7),
+                Technology(name="Docker", years=7),
+                Technology(name="Infrastructure as Code (IaC)", years=5),
+                Technology(name="Kubernetes", years=1),
             ],
         ),
         CoreSkill(
             subject="Others",
             technologies=[
-                TechnologySkill(
+                Technology(
                     name="SQL Databases (PostgreSQL, MariaDB, MSSQL, etc.)", years=6
                 ),
-                TechnologySkill(
+                Technology(
                     name="NoSQL Databases (MongoDB, DocumentDB, DynamoDB)", years=3
                 ),
-                TechnologySkill(name="Microservices", years=6),
-                TechnologySkill(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
-                TechnologySkill(name="GraphQL APIs", years=2),
-                TechnologySkill(name="Serverless Architectures", years=2),
-                TechnologySkill(name="Event-driven Software Architectures", years=4),
+                Technology(name="Microservices", years=6),
+                Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
+                Technology(name="GraphQL APIs", years=2),
+                Technology(name="Serverless Architectures", years=2),
+                Technology(name="Event-driven Software Architectures", years=4),
             ],
         ),
     ]

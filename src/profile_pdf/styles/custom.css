@@ -9,6 +9,10 @@ html, body {
   width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 :root {
   --primary-color: #E58900;
   --secondary-color:  #22547A;
@@ -48,23 +52,9 @@ html, body {
   color: white;
 }
 
-.sidebar-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.sidebar-description {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-.sidebar-list {
-  list-style-type: disc;
-  margin-left: 1.25rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
+.sidebar-image {
+  width: 50mm;
+  height: 50mm;
 }
 
 .content {
@@ -72,22 +62,6 @@ html, body {
   padding: 2rem;
 }
 
-/* Optional: keep the two columns from splitting mid-paragraph */
-.content > * {
-  break-inside: avoid;
-}
-
-.section-heading {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.paragraph {
-  margin-bottom: 1rem;
-}
-
-.subheading {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.tech-icon {
+  height: 30mm;
 }

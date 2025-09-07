@@ -11,33 +11,77 @@
   <main class="page">
     <aside class="sidebar">
       <div class="sidebar-content">
-        <h1 class="sidebar-title">Sidebar Title</h1>
-        <p class="sidebar-description">
-          A short blurb can live here. Keep it concise so it stays within a third of the page.
-        </p>
-        <ul class="sidebar-list">
-          <li>Key point one</li>
-          <li>Key point two</li>
-          <li>Key point three</li>
-        </ul>
+
+        <img src="{{ profile.profile_image_path }}" alt="{{ profile.name }}" class="sidebar-image">
+
+        <h2 class="sidebar-section-title">Personal Information</h2>
+          <h3 class="sidebar-section-field">Name</h3>
+          <h4 class="sidebar-section-value">{{ profile.name }}</h3>
+
+          <h3 class="sidebar-section-field">Location</h3>
+          <h4 class="sidebar-section-value">{{ profile.location }}</h3>
+
+          <h3 class="sidebar-section-field">Languages</h3>
+          {% for lang in profile.languages %}
+          <h4 class="sidebar-section-value">{{ lang.language }}: {{ lang.proficiency }}</h3>
+          {% endfor %}
+
+        <h2 class="sidebar-section-title">Contact</h2>
+
+          <h3 class="sidebar-section-field">Phone</h3>
+          <h4 class="sidebar-section-value">{{ profile.phone }}</h3>
+
+          <h3 class="sidebar-section-field">E-Mail</h3>
+          <h4 class="sidebar-section-value">{{ profile.email }}</h3>
+
+          <h3 class="sidebar-section-field">LinkedIn</h3>
+          <!-- todo: mkae this a link -->
+          <h4 class="sidebar-section-value">{{ profile.linkedin }}</h3>
+
+        <h2 class="sidebar-section-title">Links</h2>
+
+          <h3 class="sidebar-section-field">GitHub</h3>
+          <!-- todo: mkae this a link -->
+          <h4 class="sidebar-section-value">{{ profile.links.github }}</h3>
+
+          <h3 class="sidebar-section-field">Blog (Medium)</h3>
+          <!-- todo: mkae this a link -->
+          <h4 class="sidebar-section-value">{{ profile.links.medium }}</h3>
+
       </div>
     </aside>
 
     <section class="content">
-      <h2 class="section-heading">Main Section</h2>
-      <p class="paragraph">
-        This is the main body text. It will occupy the remaining two-thirds of the printable area.
-        You can put paragraphs, tables, and images here. WeasyPrint will honor the @page margins.
-      </p>
-      <p class="paragraph">
-        If your content overflows, WeasyPrint will create additional pages. The sidebar is set to
-        avoid being split across a page, so keep it reasonably short.
-      </p>
-      <h3 class="subheading">Another Heading</h3>
-      <p>
-        Add whatever content you need. Custom CSS classes are now used instead of Tailwind utilities
-        for better control and maintainability.
-      </p>
+
+      {% for icon_path in profile.icon_paths %}
+      <img src="{{ icon_path }}" alt="icon" class="tech-icon">
+      {% endfor %}
+
+      {% for line in profile.summary %}
+      <p>{{ line | safe }}</p>
+      {% endfor %}
+
+      <h2>Core Technologies</h2>
+        <ul>
+          {% for core_skill in profile.core_skills %}
+          <li>
+            <h3>{{ core_skill.subject }}</h3>
+            <ul>
+              {% for technology in core_skill.technologies %}
+              <li>{{ technology.name }}: {{ technology.years }} years</li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+
+
+      <h2>Certifications</h2>
+        <ul>
+          {% for certification in profile.certifications %}
+          <li>{{ certification.name }} ({{ certification.code }})</li>
+          {% endfor %}
+        </ul>
     </section>
 
   </main>
