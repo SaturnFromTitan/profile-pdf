@@ -95,12 +95,8 @@ class Profile(BaseModel):
                 ),
                 Technology(name="Pydantic", years=5),
                 Technology(name="Pandas", years=5),
-                Technology(name="TypeScript", years=2),
-                Technology(name="HTML, CSS (Bootstrap, Tailwind)", years=3),
-                Technology(
-                    name="Test-Driven Development (unit, integration, end to end, load testing, etc.)",
-                    years=9,
-                ),
+                Technology(name="JavaScript & TypeScript", years=3),
+                Technology(name="HTML, CSS", years=5),
             ],
         ),
         CoreSkill(
@@ -111,23 +107,19 @@ class Profile(BaseModel):
                 Technology(name="CI/CD", years=7),
                 Technology(name="Docker", years=7),
                 Technology(name="Infrastructure as Code (IaC)", years=5),
-                Technology(name="Kubernetes", years=1),
+                Technology(name="Kubernetes", years=2),
             ],
         ),
         CoreSkill(
             subject="Others",
             technologies=[
-                Technology(
-                    name="SQL Databases (PostgreSQL, MariaDB, MSSQL, etc.)", years=6
-                ),
-                Technology(
-                    name="NoSQL Databases (MongoDB, DocumentDB, DynamoDB)", years=3
-                ),
+                Technology(name="SQL Databases", years=6),
+                Technology(name="NoSQL Databases", years=3),
                 Technology(name="Microservices", years=6),
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
-                Technology(name="Serverless Architectures", years=2),
                 Technology(name="Event-driven Software Architectures", years=4),
+                Technology(name="Test-Driven Development", years=9),
             ],
         ),
     ]

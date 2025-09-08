@@ -31,15 +31,15 @@
 
         <h2 class="sidebar-section-title">Contact</h2>
 
-          <h3 class="sidebar-section-field">Phone</h3>
-          <div class="sidebar-section-value">{{ profile.phone }}</div>
+        <h3 class="sidebar-section-field">E-Mail</h3>
+        <div class="sidebar-section-value">{{ profile.email }}</div>
 
-          <h3 class="sidebar-section-field">E-Mail</h3>
-          <div class="sidebar-section-value">{{ profile.email }}</div>
+        <h3 class="sidebar-section-field">LinkedIn</h3>
+        <!-- todo: mkae this a link -->
+        <div class="sidebar-section-value">{{ profile.linkedin }}</div>
 
-          <h3 class="sidebar-section-field">LinkedIn</h3>
-          <!-- todo: mkae this a link -->
-          <div class="sidebar-section-value">{{ profile.linkedin }}</div>
+        <h3 class="sidebar-section-field">Phone</h3>
+        <div class="sidebar-section-value">{{ profile.phone }}</div>
 
         <h2 class="sidebar-section-title">Links</h2>
 
@@ -68,11 +68,11 @@
         {% endfor %}
       </div>
 
-      <h2>Core Technologies</h2>
+      <h2 class="content-headline">Core Technologies</h2>
         <ul>
           {% for core_skill in profile.core_skills %}
-          <li>
-            <h3>{{ core_skill.subject }}</h3>
+          <li class="content-skill-group">
+            <h3 class="content-skill-section-title">{{ core_skill.subject }}:</h3>
             <ul>
               {% for technology in core_skill.technologies %}
               <li>{{ technology.name }}: {{ technology.years }} years</li>
@@ -83,8 +83,8 @@
         </ul>
 
 
-      <h2>Certifications</h2>
-        <ul>
+      <h2 class="content-headline">Certifications</h2>
+        <ul class="certifications">
           {% for certification in profile.certifications %}
           <li>{{ certification.name }} ({{ certification.code }})</li>
           {% endfor %}

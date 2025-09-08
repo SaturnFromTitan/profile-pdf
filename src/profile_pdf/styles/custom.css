@@ -83,6 +83,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+.sidebar ul,
+.content ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.sidebar li,
+.content li {
+  margin-left: 0;
+}
+
 /* Layout styles */
 .background-div {
   position: absolute;
@@ -151,16 +163,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
   width: 66.666667%;
-  padding: 2rem;
-}
-
-.summary p {
-  font-style: italic;
-}
-
-.summary .highlighted {
-  font-weight: bold;
-  font-style: normal;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-right: 4rem;
 }
 
 .tech-icons {
@@ -176,14 +181,42 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: middle;
 }
 
-.sidebar ul,
-.content ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+.summary {
+  margin-bottom: 1em;
 }
 
-.sidebar li,
-.content li {
-  margin-left: 0;
+.summary p {
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.summary .highlighted {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.content-headline {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.content-skill-group {
+  margin-bottom: 1em;
+}
+
+.content-skill-section-title {
+  letter-spacing: 0.05em;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.05em;
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+
+.certifications {
+  font-weight: bold;
 }
