@@ -15,38 +15,41 @@
         <img src="{{ profile.profile_image_path }}" alt="{{ profile.name }}" class="sidebar-image">
 
         <h2 class="sidebar-section-title">Personal Information</h2>
+
           <h3 class="sidebar-section-field">Name</h3>
-          <span class="sidebar-section-value">{{ profile.name }}</h3>
+          <div class="sidebar-section-value">{{ profile.name }}</div>
 
           <h3 class="sidebar-section-field">Location</h3>
-          <span class="sidebar-section-value">{{ profile.location }}</h3>
+          <div class="sidebar-section-value">{{ profile.location }}</div>
 
           <h3 class="sidebar-section-field">Languages</h3>
-          {% for lang in profile.languages %}
-          <span class="sidebar-section-value">{{ lang.language }}: {{ lang.proficiency }}</h3>
-          {% endfor %}
+          <ul class="sidebar-section-value">
+            {% for lang in profile.languages %}
+            <li>{{ lang.language }}: {{ lang.proficiency }}</li>
+            {% endfor %}
+          </ul>
 
         <h2 class="sidebar-section-title">Contact</h2>
 
           <h3 class="sidebar-section-field">Phone</h3>
-          <span class="sidebar-section-value">{{ profile.phone }}</h3>
+          <div class="sidebar-section-value">{{ profile.phone }}</div>
 
           <h3 class="sidebar-section-field">E-Mail</h3>
-          <span class="sidebar-section-value">{{ profile.email }}</h3>
+          <div class="sidebar-section-value">{{ profile.email }}</div>
 
           <h3 class="sidebar-section-field">LinkedIn</h3>
           <!-- todo: mkae this a link -->
-          <span class="sidebar-section-value">{{ profile.linkedin }}</h3>
+          <div class="sidebar-section-value">{{ profile.linkedin }}</div>
 
         <h2 class="sidebar-section-title">Links</h2>
 
           <h3 class="sidebar-section-field">GitHub</h3>
           <!-- todo: mkae this a link -->
-          <span class="sidebar-section-value">{{ profile.links.github }}</h3>
+          <div class="sidebar-section-value">{{ profile.links.github }}</div>
 
           <h3 class="sidebar-section-field">Blog (Medium)</h3>
           <!-- todo: mkae this a link -->
-          <span class="sidebar-section-value">{{ profile.links.medium }}</h3>
+          <div class="sidebar-section-value">{{ profile.links.medium }}</div>
 
       </div>
     </aside>
