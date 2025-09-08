@@ -75,7 +75,7 @@
             <h3 class="content-skill-section-title">{{ core_skill.subject }}:</h3>
             <ul>
               {% for technology in core_skill.technologies %}
-              <li>{{ technology.name }}: {{ technology.years }} years</li>
+              <li>{{ technology.name }}: {{ technology.years }} {% if technology.years == 1 %}year{% else %}years{% endif %}</li>
               {% endfor %}
             </ul>
           </li>

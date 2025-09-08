@@ -118,7 +118,7 @@ class Profile(BaseModel):
                 Technology(name="Microservices", years=6),
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
-                Technology(name="Event-driven Software Architectures", years=4),
+                Technology(name="Event-Based Software Architectures", years=4),
                 Technology(name="Test-Driven Development", years=9),
             ],
         ),
