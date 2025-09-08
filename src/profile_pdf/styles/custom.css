@@ -161,6 +161,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9em;
 }
 
+/* Normalize links inside sidebar values: no special styling */
+.sidebar-section-value a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .content {
   width: 66.666667%;
   padding-left: 2rem;

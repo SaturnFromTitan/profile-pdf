@@ -36,7 +36,9 @@
 
         <h3 class="sidebar-section-field">LinkedIn</h3>
         <!-- todo: mkae this a link -->
-        <div class="sidebar-section-value">{{ profile.linkedin }}</div>
+        <div class="sidebar-section-value">
+          <a href="https://www.linkedin.com/in/martin-winkel" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a>
+        </div>
 
         <h3 class="sidebar-section-field">Phone</h3>
         <div class="sidebar-section-value">{{ profile.phone }}</div>
@@ -45,11 +47,15 @@
 
           <h3 class="sidebar-section-field">GitHub</h3>
           <!-- todo: mkae this a link -->
-          <div class="sidebar-section-value">{{ profile.links.github }}</div>
+          <div class="sidebar-section-value">
+            <a href="https://github.com/{{ profile.links.github }}" target="_blank" rel="noopener noreferrer">@{{ profile.links.github }}</a>
+          </div>
 
           <h3 class="sidebar-section-field">Blog (Medium)</h3>
           <!-- todo: mkae this a link -->
-          <div class="sidebar-section-value">{{ profile.links.medium }}</div>
+          <div class="sidebar-section-value">
+            <a href="https://medium.com/@{{ profile.links.medium }}" target="_blank" rel="noopener noreferrer">@{{ profile.links.medium }}</a>
+          </div>
 
       </div>
     </aside>

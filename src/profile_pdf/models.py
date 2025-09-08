@@ -73,8 +73,8 @@ class Profile(BaseModel):
 
     # Links to other platforms
     links: Links = Links(
-        medium="@SaturnFromTitan",
-        github="@SaturnFromTitan",
+        medium="SaturnFromTitan",
+        github="SaturnFromTitan",
     )
 
     # Professional summary
