@@ -48,7 +48,6 @@ def _generate_pdf(
 ) -> bool:
     """Generate PDF from HTML content and CSS file"""
     try:
-        # Configure fonts
         font_config = FontConfiguration()
 
         # Create HTML object
@@ -58,7 +57,7 @@ def _generate_pdf(
         html_doc.write_pdf(
             output_file,
             stylesheets=[
-                CSS(STYLES_DIR / "custom.css"),
+                CSS(filename=str(STYLES_DIR / "custom.css"), font_config=font_config),
             ],
             font_config=font_config,
         )

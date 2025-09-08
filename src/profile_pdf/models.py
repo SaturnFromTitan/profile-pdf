@@ -67,7 +67,7 @@ class Profile(BaseModel):
     ]
 
     # Contact information
-    phone: str = "(hidden)"
+    phone: str = "(upon request)"
     email: str = "martin@pythonation.de"
     linkedin: str = "@martin-winkel"
 
@@ -79,7 +79,7 @@ class Profile(BaseModel):
 
     # Professional summary
     summary: list[str] = [
-        "<strong>Lead Software Engineer</strong> and <strong>Certified AWS Solutions Architect</strong> with over 10 years of experience. Combining deep technical expertise, a strong product mindset, and excellent communication skills.",
+        '<span class="highlighted">Lead Software Engineer</span> and <span class="highlighted">Certified AWS Solutions Architect</span> with over 10 years of experience. Combining deep technical expertise, a strong product mindset, and excellent communication skills.',
         "In 2017, I co-founded and led a software development consultancy focusing on digital transformation. I built and supervised applications of various sizes and business domains for clients ranging from start-ups to DAX companies.",
         "Since 2023, I have been working as a freelance developer and advisor again.",
     ]

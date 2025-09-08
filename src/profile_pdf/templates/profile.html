@@ -16,50 +16,54 @@
 
         <h2 class="sidebar-section-title">Personal Information</h2>
           <h3 class="sidebar-section-field">Name</h3>
-          <h4 class="sidebar-section-value">{{ profile.name }}</h3>
+          <span class="sidebar-section-value">{{ profile.name }}</h3>
 
           <h3 class="sidebar-section-field">Location</h3>
-          <h4 class="sidebar-section-value">{{ profile.location }}</h3>
+          <span class="sidebar-section-value">{{ profile.location }}</h3>
 
           <h3 class="sidebar-section-field">Languages</h3>
           {% for lang in profile.languages %}
-          <h4 class="sidebar-section-value">{{ lang.language }}: {{ lang.proficiency }}</h3>
+          <span class="sidebar-section-value">{{ lang.language }}: {{ lang.proficiency }}</h3>
           {% endfor %}
 
         <h2 class="sidebar-section-title">Contact</h2>
 
           <h3 class="sidebar-section-field">Phone</h3>
-          <h4 class="sidebar-section-value">{{ profile.phone }}</h3>
+          <span class="sidebar-section-value">{{ profile.phone }}</h3>
 
           <h3 class="sidebar-section-field">E-Mail</h3>
-          <h4 class="sidebar-section-value">{{ profile.email }}</h3>
+          <span class="sidebar-section-value">{{ profile.email }}</h3>
 
           <h3 class="sidebar-section-field">LinkedIn</h3>
           <!-- todo: mkae this a link -->
-          <h4 class="sidebar-section-value">{{ profile.linkedin }}</h3>
+          <span class="sidebar-section-value">{{ profile.linkedin }}</h3>
 
         <h2 class="sidebar-section-title">Links</h2>
 
           <h3 class="sidebar-section-field">GitHub</h3>
           <!-- todo: mkae this a link -->
-          <h4 class="sidebar-section-value">{{ profile.links.github }}</h3>
+          <span class="sidebar-section-value">{{ profile.links.github }}</h3>
 
           <h3 class="sidebar-section-field">Blog (Medium)</h3>
           <!-- todo: mkae this a link -->
-          <h4 class="sidebar-section-value">{{ profile.links.medium }}</h3>
+          <span class="sidebar-section-value">{{ profile.links.medium }}</h3>
 
       </div>
     </aside>
 
     <section class="content">
 
-      {% for icon_path in profile.icon_paths %}
-      <img src="{{ icon_path }}" alt="icon" class="tech-icon">
-      {% endfor %}
+      <div class="tech-icons">
+        {% for icon_path in profile.icon_paths %}
+        <img src="{{ icon_path }}" alt="icon" class="tech-icon">
+        {% endfor %}
+      </div>
 
-      {% for line in profile.summary %}
-      <p>{{ line | safe }}</p>
-      {% endfor %}
+      <div class="summary">
+        {% for line in profile.summary %}
+        <p>{{ line | safe }}</p>
+        {% endfor %}
+      </div>
 
       <h2>Core Technologies</h2>
         <ul>

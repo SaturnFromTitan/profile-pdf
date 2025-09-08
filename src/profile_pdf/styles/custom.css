@@ -1,15 +1,65 @@
+/* Font faces */
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-CondensedRegular.otf") format("opentype");
+  font-weight: 400;
+  font-stretch: condensed;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-CondensedItalic.otf") format("opentype");
+  font-weight: 400;
+  font-stretch: condensed;
+  font-style: italic;
+}
+
 /* Paged media setup for WeasyPrint */
 @page {
-  size: A4;               /* or "letter" */
-  margin: 0;              /* printable margin */
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
+  size: A4;
   margin: 0;
 }
 
@@ -20,15 +70,27 @@ h1, h2, h3, h4, h5, h6 {
   --ultra-light-color: #F0F0F0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "League Gothic", "PT Sans", Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
 /* Layout styles */
 .background-div {
   position: absolute;
-  top: 0;  /* Offset the page margin */
-  left: 0; /* Offset the page margin */
+  top: 0;
+  left: 0;
   /* please note that WeayPrint doesn't support calc() */
   width: 70mm; /* 1/3 of A4 width (210mm) */
   height: 297mm; /* A4 height */
-  background-color: var(--secondary-color); /* blue-500 */
+  background-color: var(--secondary-color);
   z-index: -10;
 }
 
@@ -53,8 +115,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-image {
-  width: 50mm;
-  height: 50mm;
+  width: 46mm;
+  height: 46mm;
+  border: 3pt solid white;
+  border-radius: 0;
 }
 
 .content {
@@ -62,6 +126,35 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem;
 }
 
+.summary p {
+  font-style: italic;
+}
+
+.summary .highlighted {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.tech-icons {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
 .tech-icon {
-  height: 30mm;
+  display: inline-block;
+  height: 23mm;
+  width: auto;
+  margin-left: 4mm;
+  vertical-align: middle;
+}
+
+.content ul,
+.content ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.content li {
+  margin-left: 0;
 }
