@@ -345,23 +345,23 @@ class Profile(BaseModel):
                 "Work Method": ["Scrum"],
             },
         ),
-        WorkExperience(
-            title="Solution Architect",
-            contract_type=ContractType.CONSULTANT,
-            company="Selly Biz",
-            start="2023/05",
-            end="2023/05",
-            location="Berlin",
-            description="Designed a scalable data ingestion application using Apache Airflow on AWS.",
-            bullet_points=[
-                "Designed the system with the CEO & CTO",
-                "Provided in-depth Apache Airflow knowledge",
-            ],
-            technologies={
-                "Python": ["Airflow", "Dagster", "Prefect"],
-                "AWS": ["S3", "Managed Airflow"],
-            },
-        ),
+        # WorkExperience(
+        #     title="Solution Architect",
+        #     contract_type=ContractType.CONSULTANT,
+        #     company="Selly Biz",
+        #     start="2023/05",
+        #     end="2023/05",
+        #     location="Berlin",
+        #     description="Designed a scalable data ingestion application using Apache Airflow on AWS.",
+        #     bullet_points=[
+        #         "Designed the system with the CEO & CTO",
+        #         "Provided in-depth Apache Airflow knowledge",
+        #     ],
+        #     technologies={
+        #         "Python": ["Airflow", "Dagster", "Prefect"],
+        #         "AWS": ["S3", "Managed Airflow"],
+        #     },
+        # ),
         WorkExperience(
             title="Lead Full Stack Developer",
             contract_type=ContractType.CONSULTANT,
@@ -482,18 +482,18 @@ class Profile(BaseModel):
         #         "Others": ["Facebook Ads", "Google Ads", "Google Analytics"],
         #     },
         # ),
-        WorkExperience(
-            title="Open Source Contributor",
-            contract_type=None,
-            company="Pandas",
-            start="2019/10",
-            end="2020/04",
-            location="Remote",
-            description="Contributed regularly to pandas to learn its internals and to give back to the community.",
-            technologies={
-                "Python": ["Pandas", "Pytest"],
-            },
-        ),
+        # WorkExperience(
+        #     title="Open Source Contributor",
+        #     contract_type=None,
+        #     company="Pandas",
+        #     start="2019/10",
+        #     end="2020/04",
+        #     location="Remote",
+        #     description="Contributed regularly to pandas to learn its internals and to give back to the community.",
+        #     technologies={
+        #         "Python": ["Pandas", "Pytest"],
+        #     },
+        # ),
         WorkExperience(
             title="Lead Backend Developer",
             contract_type=ContractType.CONSULTANT,
