@@ -71,8 +71,6 @@
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
   font-family: "PT Sans", Arial, Helvetica, sans-serif;
   color: black;
 }
@@ -107,9 +105,15 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -10;
 }
 
-.page {
+.cover-page {
   display: flex;
   flex-direction: row;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin: 18mm;
 }
 
 .sidebar {

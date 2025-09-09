@@ -8,7 +8,7 @@
 <body>
   <div class="background-div"></div>
 
-  <main class="page">
+  <div class="cover-page">
     <aside class="sidebar">
       <div class="sidebar-content">
 
@@ -31,17 +31,17 @@
 
         <h2 class="sidebar-section-title">Contact</h2>
 
-        <h3 class="sidebar-section-field">E-Mail</h3>
-        <div class="sidebar-section-value">{{ profile.email }}</div>
+          <h3 class="sidebar-section-field">E-Mail</h3>
+          <div class="sidebar-section-value">{{ profile.email }}</div>
 
-        <h3 class="sidebar-section-field">LinkedIn</h3>
-        <!-- todo: mkae this a link -->
-        <div class="sidebar-section-value">
-          <a href="https://www.linkedin.com/in/martin-winkel" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a>
-        </div>
+          <h3 class="sidebar-section-field">LinkedIn</h3>
+          <!-- todo: mkae this a link -->
+          <div class="sidebar-section-value">
+            <a href="https://www.linkedin.com/in/martin-winkel" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a>
+          </div>
 
-        <h3 class="sidebar-section-field">Phone</h3>
-        <div class="sidebar-section-value">{{ profile.phone }}</div>
+          <h3 class="sidebar-section-field">Phone</h3>
+          <div class="sidebar-section-value">{{ profile.phone }}</div>
 
         <h2 class="sidebar-section-title">Links</h2>
 
@@ -96,7 +96,28 @@
           {% endfor %}
         </ul>
     </section>
+  </div>
 
-  </main>
+  <div class="page">
+    <h2 class="content-headline">Excerpt of Work Experience</h2>
+
+      {% for work_experience in profile.work_experience %}
+      <h3>{{ work_experience.title }} ({{ work_experience.contract_type }})</h3>
+      <h4>{{ work_experience.company }} | {{ work_experience.start }} - {{ work_experience.end }} | {{ work_experience.lofaction }}</h4>
+      <div class="work-experience-technologies">
+        {% for tech_category, tech_list in work_experience.technologies.items() %}
+          <strong>{{ tech_category }}:</strong>{{ tech_list | join(', ') }}<br>
+        {% endfor %}
+      </div>
+      <div>{{ work_experience.description }}</div>
+      <ul>
+        {% for bullet_point in work_experience.bullet_points %}
+        <li>{{ bullet_point }}</li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+
+    <h2 class="content-headline">Education</h2>
+  </div>
 </body>
 </html>
