@@ -285,6 +285,7 @@ class Profile(BaseModel):
                     "Go",
                     "ImageMagick",
                     "JavaScript",
+                    "MongoDB",
                     "OAuth 2.0",
                     "OpenAPI",
                     "Sentry",
@@ -397,7 +398,7 @@ class Profile(BaseModel):
                 "Others": [
                     "Amazon Order API",
                     "Amazon Ads",
-                    "Bootstrap",
+                    "Bootstrap CSS",
                     "Dependabot",
                     "Docker",
                     "DrawIO",

@@ -107,7 +107,7 @@
       <h4 class="work-experience-meta">{{ we.company }} | {% if we.end %}{{ we.start }} - {{ we.end }}{% else %}Since {{ we.start }}{% endif %} | {{ we.lofaction or "Remote" }}</h4>
       <div class="work-experience-technologies">
         {% for tech_category, tech_list in we.technologies.items() %}
-          <span class="work-experience-technologies-group"><strong>{{ tech_category }}: </strong>{{ tech_list | join(', ') }}</span>
+          <span class="work-experience-technologies-group"><strong>{{ tech_category }}: </strong>{{ tech_list | sort | join(', ') }}</span>
         {% endfor %}
       </div>
       <p class="work-experience-description">{{ we.description | safe }}</p>
