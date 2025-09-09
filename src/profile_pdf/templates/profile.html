@@ -118,9 +118,20 @@
       </ul>
     </div>
     {% endfor %}
-
+  </div>
+  <div class="page">
     <h2 class="content-headline">Education</h2>
 
+    {% for education in profile.education %}
+    <div class="education">
+      <h3 class="education-title">{{ education.degree }}</h3>
+      <h4 class="education-meta">{{ education.field_of_study }} | {{ education.institution }} | {{ education.start }} - {{ education.end }}</h4>
+      <p class="education-description">
+        <strong>Specialisation:</strong> {{ education.specialisation }}<br>
+        <strong>Thesis:</strong> {{ education.thesis }}
+      </p>
+    </div>
+    {% endfor %}
   </div>
 </body>
 </html>

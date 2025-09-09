@@ -74,12 +74,11 @@ class WorkExperience(BaseModel):
 class Education(BaseModel):
     """Education"""
 
-    degree: str
     field_of_study: str
     institution: str
+    degree: str
     start: datetime.date
     end: datetime.date | None = None
-    location: str | None
     specialisation: str
     thesis: str
 
@@ -575,12 +574,11 @@ class Profile(BaseModel):
     # Education
     education: list[Education] = [
         Education(
-            degree="Diplom (equivalent Master of Science)",
             field_of_study="Economical Mathematics",
-            institution="University of Leipzig",
+            institution="Leipzig University",
+            degree="Diplom (equal to Master of Science)",
             start=datetime.date(2010, 10, 1),
             end=datetime.date(2016, 2, 1),
-            location="Leipzig",
             specialisation="Mathematical optimisation of business problems",
             thesis="Design and implementation of a swarm intelligence algorithm to solve scheduling problems (flow shop)",
         ),
