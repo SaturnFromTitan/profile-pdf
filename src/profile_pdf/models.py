@@ -341,7 +341,7 @@ class Profile(BaseModel):
             },
         ),
         WorkExperience(
-            title="Solution Architect & Advisor",
+            title="Solution Architect",
             contract_type=ContractType.CONSULTANT,
             company="Selly Biz",
             start="2023/05",
@@ -465,6 +465,18 @@ class Profile(BaseModel):
                 ],
             },
         ),
+        # WorkExperience(
+        #     title="External Advisor",
+        #     contract_type=ContractType.CONSULTANT,
+        #     company="HelloFresh",
+        #     start="2020/03",
+        #     end="2020/03",
+        #     location="Remote",
+        #     description="External audit of HelloFresh's Marketing Business Intelligence.",
+        #     technologies={
+        #         "Others": ["Facebook Ads", "Google Ads", "Google Analytics"],
+        #     },
+        # ),
         WorkExperience(
             title="Open Source Contributor",
             contract_type=None,
@@ -543,6 +555,26 @@ class Profile(BaseModel):
                 "Work Method": ["Initially Kanban, later Scrum"],
             },
         ),
+        # WorkExperience(
+        #     title="Backend Developer",
+        #     contract_type=ContractType.CONSULTANT,
+        #     company="BlaBlaCar",
+        #     start="2019/05",
+        #     end="2019/07",
+        #     location=None,
+        #     description="Build an internal application to automate Google Ads campaign managemnet.",
+        #     technologies={
+        #         "Python": [
+        #             "Flask",
+        #             "Mypy",
+        #             "Pytest",
+        #             "Requests",
+        #         ],
+        #         "Others": [
+        #             "BitBucket", "Bootstrap CSS", "Google Cloud (GCP)", "HTML", "WebSockets",
+        #         ],
+        #     },
+        # ),
         WorkExperience(
             title="Backend Developer",
             contract_type=ContractType.CONSULTANT,
@@ -577,6 +609,36 @@ class Profile(BaseModel):
                 "Work Method": ["Kanban"],
             },
         ),
+        # WorkExperience(
+        #     title="Data Engineer",
+        #     contract_type=ContractType.CONSULTANT,
+        #     company="Clearly",
+        #     start="2017/09",
+        #     end="2018/02",
+        #     location="Vancouver, BC (Canada)",
+        #     description="In-house expert for web tracking, marketing and BI tools.",
+        #     technologies={
+        #         "Python": ["Pandas", "Pytest"],
+        #         "Others": [
+        #             "Adobe Analytics", "Dash", "GitHub", "Facebook Ads", "Google Ads", "Google Analytics", "Google Tag Manager", "R", "Shiny",
+        #         ],
+        #     },
+        # ),
+        # WorkExperience(
+        #     title="Performance Marketing Automation Engineer",
+        #     contract_type=ContractType.FREELANCE,
+        #     company="Omio (formerly GoEuro)",
+        #     start="2017/02",
+        #     end="2017/06",
+        #     location="Berlin",
+        #     description="Custom Python scripts to automate Google Ads campaign management.",
+        #     technologies={
+        #         "Python": ["Pandas", "Pytest"],
+        #         "Others": [
+        #             "AWS Redshift", "GitHub", "Google Ads", "Google Tag Manager", "Google Analytics",
+        #         ],
+        #     },
+        # ),
         WorkExperience(
             title="Performance Marketing Automation Engineer",
             contract_type=ContractType.EMPLOYED,

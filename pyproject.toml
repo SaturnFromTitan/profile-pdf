@@ -124,5 +124,9 @@ ignore = [
   "TRY300",  # try-consider-else: else statements can be harder to read
 ]
 
+
+[tool.ruff.lint.per-file-ignores]
+"src/profile_pdf/models.py" = ["ERA001"]
+
 [tool.ruff.lint.pylint]
 max-args = 8
