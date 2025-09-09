@@ -225,8 +225,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-.work-experience {
+.work-experience,
+.education {
   margin-bottom: 1.5rem;
+  /* Keep each work experience together on one page */
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .work-experience-title,

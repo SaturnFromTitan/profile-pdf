@@ -99,11 +99,11 @@
   </div>
 
   <div class="page">
-    <h2 class="content-headline">Excerpt of Work Experience</h2>
 
+    <h2 class="content-headline">Excerpt of Work Experience</h2>
     {% for work_experience in profile.work_experience %}
     <div class="work-experience">
-      <h3 class="work-experience-title">{{ work_experience.title }} ({{ work_experience.contract_type }})</h3>
+      <h3 class="work-experience-title">{{ work_experience.title }}{% if work_experience.contract_type %} ({{ work_experience.contract_type }}){% endif %}</h3>
       <h4 class="work-experience-meta">{{ work_experience.company }} | {{ work_experience.start }} - {{ work_experience.end }} | {{ work_experience.lofaction or "Remote" }}</h4>
       <div class="work-experience-technologies">
         {% for tech_category, tech_list in work_experience.technologies.items() %}
@@ -118,10 +118,8 @@
       </ul>
     </div>
     {% endfor %}
-  </div>
-  <div class="page">
-    <h2 class="content-headline">Education</h2>
 
+    <h2 class="content-headline">Education</h2>
     {% for education in profile.education %}
     <div class="education">
       <h3 class="education-title">{{ education.degree }}</h3>

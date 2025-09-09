@@ -342,7 +342,7 @@ class Profile(BaseModel):
                 "Others": [
                     "Dependabot",
                     "Docker",
-                    "Draw.io",
+                    "DrawIO",
                     "GitHub Actions",
                     "Heroku",
                     "HTML",
@@ -398,7 +398,7 @@ class Profile(BaseModel):
                     "Bootstrap",
                     "Dependabot",
                     "Docker",
-                    "Draw.io",
+                    "DrawIO",
                     "Facebook Ads",
                     "GitHub Actions",
                     "Google Ads",
@@ -478,7 +478,7 @@ class Profile(BaseModel):
                 ],
                 "Others": [
                     "Docker",
-                    "Draw.io",
+                    "DrawIO",
                     "GitHub",
                     "Grafana",
                     "HTML",
@@ -524,7 +524,7 @@ class Profile(BaseModel):
                 "Others": [
                     "BigQuery",
                     "Docker",
-                    "Draw.io",
+                    "DrawIO",
                     "GitHub",
                     "OAuth 2.0",
                     "Presto",
