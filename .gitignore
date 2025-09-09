@@ -80,9 +80,6 @@ target/
 profile_default/
 ipython_config.py
 
-# pyenv
-.python-version
-
 # pipenv
 Pipfile.lock
 
@@ -192,3 +189,7 @@ node_modules/
 *.swo
 *~
 # End Generation Here
+
+*.temp.css
+profile.pdf
+output/
