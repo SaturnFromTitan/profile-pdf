@@ -1,5 +1,7 @@
+import datetime
 import logging
 import sys
+import zoneinfo
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -39,7 +41,8 @@ def _render_html_template(profile: Profile) -> str:
     template = env.get_template("profile.html")
 
     # Render template with profile data
-    return template.render(profile=profile)
+    today = datetime.datetime.now(tz=zoneinfo.ZoneInfo("Europe/Berlin")).date()
+    return template.render(profile=profile, today=today)
 
 
 def _generate_pdf(

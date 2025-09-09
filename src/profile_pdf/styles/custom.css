@@ -61,6 +61,10 @@
 @page {
   size: A4;
   margin: 18mm;
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-size: 10pt;
+  }
 }
 
 :root {
