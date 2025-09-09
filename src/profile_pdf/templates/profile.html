@@ -101,23 +101,26 @@
   <div class="page">
     <h2 class="content-headline">Excerpt of Work Experience</h2>
 
-      {% for work_experience in profile.work_experience %}
-      <h3>{{ work_experience.title }} ({{ work_experience.contract_type }})</h3>
-      <h4>{{ work_experience.company }} | {{ work_experience.start }} - {{ work_experience.end }} | {{ work_experience.lofaction }}</h4>
+    {% for work_experience in profile.work_experience %}
+    <div class="work-experience">
+      <h3 class="work-experience-title">{{ work_experience.title }} ({{ work_experience.contract_type }})</h3>
+      <h4 class="work-experience-meta">{{ work_experience.company }} | {{ work_experience.start }} - {{ work_experience.end }} | {{ work_experience.lofaction or "Remote" }}</h4>
       <div class="work-experience-technologies">
         {% for tech_category, tech_list in work_experience.technologies.items() %}
-          <strong>{{ tech_category }}:</strong>{{ tech_list | join(', ') }}<br>
+          <span class="work-experience-technologies-group"><strong>{{ tech_category }}: </strong>{{ tech_list | join(', ') }}</span>
         {% endfor %}
       </div>
-      <div>{{ work_experience.description }}</div>
-      <ul>
+      <p class="work-experience-description">{{ work_experience.description | safe }}</p>
+      <ul class="work-experience-bullet-points">
         {% for bullet_point in work_experience.bullet_points %}
         <li>{{ bullet_point }}</li>
         {% endfor %}
       </ul>
-      {% endfor %}
+    </div>
+    {% endfor %}
 
     <h2 class="content-headline">Education</h2>
+
   </div>
 </body>
 </html>

@@ -60,7 +60,7 @@
 /* Paged media setup for WeasyPrint */
 @page {
   size: A4;
-  margin: 0;
+  margin: 18mm;
 }
 
 :root {
@@ -88,16 +88,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 
-.sidebar li,
-.content li {
-  margin-left: 0;
-}
-
 /* Layout styles */
 .background-div {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -18mm;
+  left: -18mm;
   /* please note that WeayPrint doesn't support calc() */
   width: 70mm; /* 1/3 of A4 width (210mm) */
   height: 297mm; /* A4 height */
@@ -108,12 +103,12 @@ h1, h2, h3, h4, h5, h6 {
 .cover-page {
   display: flex;
   flex-direction: row;
+  margin: -18mm;
 }
 
 .page {
   display: flex;
   flex-direction: column;
-  margin: 18mm;
 }
 
 .sidebar {
@@ -228,4 +223,47 @@ h1, h2, h3, h4, h5, h6 {
 
 .certifications {
   font-weight: bold;
+}
+
+.work-experience {
+  margin-bottom: 1.5rem;
+}
+
+.work-experience-title {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: -0.2em; /* no idea why this is necessary. adjusting the line-height didn't work */
+}
+
+.work-experience-meta {
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--light-color);
+  margin-bottom: 0.2em;
+}
+
+.work-experience-technologies {
+  font-size: 0.8em;
+  background-color: var(--ultra-light-color);
+}
+
+.work-experience-technologies-group {
+  margin-right: 1em;
+}
+
+.work-experience-description {
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+}
+
+.work-experience-description a {
+  text-decoration: none;
+}
+
+.work-experience-bullet-points {
+  margin: 0;
+  padding-left: 3.1mm;
 }

@@ -193,7 +193,7 @@ class Profile(BaseModel):
                     "Uv",
                     "Uvicorn",
                 ],
-                "Azure": ["AKS"],
+                "Azure": ["ACR", "AKS"],
                 "Others": [
                     "Azure DevOps",
                     "Azure DevOps Pipelines",
@@ -277,7 +277,7 @@ class Profile(BaseModel):
                     "Bash",
                     "Dependabot",
                     "Docker",
-                    "Draw.io",
+                    "DrawIO",
                     "FigJam",
                     "GitHub Actions",
                     "GitLab CI",
