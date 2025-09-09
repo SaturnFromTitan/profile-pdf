@@ -101,18 +101,18 @@
   <div class="page">
 
     <h2 class="content-headline">Excerpt of Work Experience</h2>
-    {% for work_experience in profile.work_experience %}
+    {% for we in profile.work_experience %}
     <div class="work-experience">
-      <h3 class="work-experience-title">{{ work_experience.title }}{% if work_experience.contract_type %} ({{ work_experience.contract_type }}){% endif %}</h3>
-      <h4 class="work-experience-meta">{{ work_experience.company }} | {{ work_experience.start }} - {{ work_experience.end }} | {{ work_experience.lofaction or "Remote" }}</h4>
+      <h3 class="work-experience-title">{{ we.title }}{% if we.contract_type %} ({{ we.contract_type }}){% endif %}</h3>
+      <h4 class="work-experience-meta">{{ we.company }} | {% if we.end %}{{ we.start }} - {{ we.end }}{% else %}Since {{ we.start }}{% endif %} | {{ we.lofaction or "Remote" }}</h4>
       <div class="work-experience-technologies">
-        {% for tech_category, tech_list in work_experience.technologies.items() %}
+        {% for tech_category, tech_list in we.technologies.items() %}
           <span class="work-experience-technologies-group"><strong>{{ tech_category }}: </strong>{{ tech_list | join(', ') }}</span>
         {% endfor %}
       </div>
-      <p class="work-experience-description">{{ work_experience.description | safe }}</p>
+      <p class="work-experience-description">{{ we.description | safe }}</p>
       <ul class="work-experience-bullet-points">
-        {% for bullet_point in work_experience.bullet_points %}
+        {% for bullet_point in we.bullet_points %}
         <li>{{ bullet_point }}</li>
         {% endfor %}
       </ul>
@@ -120,13 +120,13 @@
     {% endfor %}
 
     <h2 class="content-headline">Education</h2>
-    {% for education in profile.education %}
+    {% for ed in profile.education %}
     <div class="education">
-      <h3 class="education-title">{{ education.degree }}</h3>
-      <h4 class="education-meta">{{ education.field_of_study }} | {{ education.institution }} | {{ education.start }} - {{ education.end }}</h4>
+      <h3 class="education-title">{{ ed.degree }}</h3>
+      <h4 class="education-meta">{{ ed.field_of_study }} | {{ ed.institution }} | {% if ed.end %}{{ ed.start }} - {{ ed.end }}{% else %}Since {{ ed.start }}{% endif %}</h4>
       <p class="education-description">
-        <strong>Specialisation:</strong> {{ education.specialisation }}<br>
-        <strong>Thesis:</strong> {{ education.thesis }}
+        <strong>Specialisation:</strong> {{ ed.specialisation }}<br>
+        <strong>Thesis:</strong> {{ ed.thesis }}
       </p>
     </div>
     {% endfor %}

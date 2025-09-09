@@ -248,7 +248,6 @@ h1, h2, h3, h4, h5, h6 {
 .work-experience-meta,
 .education-meta {
   font-family: "PT Sans", Arial, Helvetica, sans-serif;
-  font-size: 1.1em;
   font-style: italic;
   font-weight: normal;
   color: var(--light-color);

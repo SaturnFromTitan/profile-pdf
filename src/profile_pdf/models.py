@@ -1,10 +1,12 @@
-import datetime
 import pathlib
 from enum import StrEnum
+from typing import Annotated
 
-from pydantic import BaseModel
+from pydantic import BaseModel, StringConstraints
 
 from . import MEDIA_DIR
+
+YearMonth = Annotated[str, StringConstraints(pattern=r"^20\d{2}/(0[1-9]|1[0-2])$")]
 
 
 class LanguageProficiency(StrEnum):
@@ -63,8 +65,8 @@ class WorkExperience(BaseModel):
     title: str
     contract_type: ContractType | None
     company: str
-    start: datetime.date
-    end: datetime.date | None = None
+    start: YearMonth
+    end: YearMonth | None = None
     location: str | None
     description: str
     bullet_points: list[str]
@@ -77,8 +79,8 @@ class Education(BaseModel):
     field_of_study: str
     institution: str
     degree: str
-    start: datetime.date
-    end: datetime.date | None = None
+    start: YearMonth
+    end: YearMonth | None = None
     specialisation: str
     thesis: str
 
@@ -171,8 +173,8 @@ class Profile(BaseModel):
             title="Senior Backend Developer",
             contract_type=ContractType.FREELANCE,
             company="Vonovia SE",
-            start=datetime.date(2025, 3, 1),
-            end=datetime.date(2025, 7, 31),
+            start="2025/03",
+            end="2025/07",
             location="Remote",
             description="TBA",
             bullet_points=[],
@@ -212,8 +214,8 @@ class Profile(BaseModel):
             title="Senior Backend Developer",
             contract_type=ContractType.FREELANCE,
             company="Bayer AG",
-            start=datetime.date(2023, 1, 1),
-            end=datetime.date(2025, 2, 28),
+            start="2023/01",
+            end="2025/02",
             location="Remote",
             description='Bayer\'s Crop Protection Innovation Lab builds AI-driven products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
             bullet_points=[
@@ -299,8 +301,8 @@ class Profile(BaseModel):
             title="Solution Architect & Advisor",
             contract_type=ContractType.CONSULTANT,
             company="Selly Biz",
-            start=datetime.date(2023, 5, 1),
-            end=datetime.date(2023, 5, 31),
+            start="2023/05",
+            end="2023/05",
             location="Berlin",
             description="Designed a scalable data ingestion application using Apache Airflow on AWS.",
             bullet_points=[
@@ -316,8 +318,8 @@ class Profile(BaseModel):
             title="Lead Full Stack Developer",
             contract_type=ContractType.CONSULTANT,
             company="Selly Biz",
-            start=datetime.date(2022, 8, 1),
-            end=datetime.date(2022, 10, 31),
+            start="2022/08",
+            end="2022/10",
             location="Berlin",
             description='Kickstarted a platform for German companies to hire international kitchen staff (<a href="https://www.chef-bao.com/">chef-bao.com</a>).',
             bullet_points=[
@@ -361,8 +363,8 @@ class Profile(BaseModel):
             title="Lead Full Stack Developer & Co-Founder",
             contract_type=ContractType.EMPLOYED,
             company="Lemon Tree",
-            start=datetime.date(2021, 7, 1),
-            end=datetime.date(2022, 6, 30),
+            start="2021/07",
+            end="2022/06",
             location="Berlin",
             description='Collaborating with Europe\'s leading producer (<a href="https://en.wikipedia.org/wiki/Lonza_Group">Lonza</a>), we built a start-up to sell innovative food supplements.',
             bullet_points=[
@@ -421,8 +423,8 @@ class Profile(BaseModel):
             title="Open Source Contributor",
             contract_type=None,
             company="Pandas",
-            start=datetime.date(2019, 10, 1),
-            end=datetime.date(2020, 4, 30),
+            start="2019/10",
+            end="2020/04",
             location="Remote",
             description="Contributed regularly to pandas to learn its internals and to give back to the community.",
             bullet_points=[
@@ -437,8 +439,8 @@ class Profile(BaseModel):
             title="Lead Backend Developer",
             contract_type=ContractType.CONSULTANT,
             company="Zalando Marketing Services",
-            start=datetime.date(2018, 12, 1),
-            end=datetime.date(2021, 7, 31),
+            start="2018/12",
+            end="2021/07",
             location="Berlin",
             description="Zalando was unhappy with their Salesforce integration, so we set out to build a greenfield CRM application to manage sales processes end to end.",
             bullet_points=[
@@ -502,8 +504,8 @@ class Profile(BaseModel):
             title="Backend Developer",
             contract_type=ContractType.CONSULTANT,
             company="Zalando Marketing Services",
-            start=datetime.date(2018, 2, 1),
-            end=datetime.date(2018, 12, 31),
+            start="2018/02",
+            end="2018/12",
             location="Berlin",
             description="Automate critical sales processes to enable growth.",
             bullet_points=[
@@ -536,8 +538,8 @@ class Profile(BaseModel):
             title="Performance Marketing Automation Engineer",
             contract_type=ContractType.EMPLOYED,
             company="Auto1 AG",
-            start=datetime.date(2016, 2, 1),
-            end=datetime.date(2017, 2, 28),
+            start="2016/02",
+            end="2017/02",
             location="Berlin",
             description="Dramatically improved efficiency and decision-making with custom tools for online marketing platforms.",
             bullet_points=[
@@ -560,8 +562,8 @@ class Profile(BaseModel):
             title="Web Analyst (Part-Time)",
             contract_type=ContractType.EMPLOYED,
             company="Spreadshirt AG",
-            start=datetime.date(2013, 2, 1),
-            end=datetime.date(2015, 2, 28),
+            start="2013/02",
+            end="2015/02",
             location="Leipzig",
             description="In-house expert for web tracking and reporting tools.",
             bullet_points=[],
@@ -577,8 +579,8 @@ class Profile(BaseModel):
             field_of_study="Economical Mathematics",
             institution="Leipzig University",
             degree="Diplom (equal to Master of Science)",
-            start=datetime.date(2010, 10, 1),
-            end=datetime.date(2016, 2, 1),
+            start="2010/10",
+            end="2016/02",
             specialisation="Mathematical optimisation of business problems",
             thesis="Design and implementation of a swarm intelligence algorithm to solve scheduling problems (flow shop)",
         ),
