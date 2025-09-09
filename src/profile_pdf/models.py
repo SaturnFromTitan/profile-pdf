@@ -69,7 +69,7 @@ class WorkExperience(BaseModel):
     end: YearMonth | None = None
     location: str | None
     description: str
-    bullet_points: list[str]
+    bullet_points: list[str] = []
     technologies: dict[str, list[str]]
 
 
@@ -155,7 +155,7 @@ class Profile(BaseModel):
                 Technology(name="Microservices", years=6),
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
-                Technology(name="Event-Based Software Architectures", years=4),
+                Technology(name="Event-Driven Software Architectures", years=4),
                 Technology(name="Test-Driven Development", years=9),
             ],
         ),
@@ -217,13 +217,13 @@ class Profile(BaseModel):
             start="2023/01",
             end="2025/02",
             location="Remote",
-            description='Bayer\'s Crop Protection Innovation Lab builds AI-driven products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
+            description='Bayer\'s Crop Protection Innovation Lab builds AI-driven IoT products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
             bullet_points=[
-                "Backend for mobile apps and tens of thousands of IoT devices",
+                "Integration of custom-built AI models to deliver real-time insights to customers",
+                "Backend for mobile apps and tens of thousands of IoT devices and DJI drones",
                 "Cost-effective, serverless, event-driven ingestion of GBs of image data on AWS",
-                "Integration of in-house AI models to deliver insights to customers in seconds",
                 "Proactive role in architecture and feature design",
-                "Cross-team communication",
+                "Proactive cross-team communication",
                 "Reference expert for Python",
             ],
             technologies={
@@ -324,10 +324,11 @@ class Profile(BaseModel):
             location="Berlin",
             description='Kickstarted a platform for German companies to hire international kitchen staff (<a href="https://www.chef-bao.com/">chef-bao.com</a>).',
             bullet_points=[
-                "Built a custom app for job listings and CV submissions",
-                "In-house experts reviewed CVs and matched candidates",
+                "Built a custom web application for job listings and CV submissions",
+                "In-house experts reviewed CVs and matched candidates to open positions",
+                "As the sole developer, I was responsible for FE, BE, infrastructure, deployments and observability",
                 "Optimized applicant-facing pages for mobile",
-                "Launched smoothly to an international user base after 2 months",
+                "After 2 months, we launched smoothly to an international user base",
             ],
             technologies={
                 "Python": [
@@ -369,11 +370,11 @@ class Profile(BaseModel):
             location="Berlin",
             description='Collaborating with Europe\'s leading producer (<a href="https://en.wikipedia.org/wiki/Lonza_Group">Lonza</a>), we built a start-up to sell innovative food supplements.',
             bullet_points=[
-                "Scaled to 6-figure annual revenue with heavy automation",
-                "Built full-stack webshop on Django Oscar",
-                "Payments via PayPal and Stripe",
+                "Scaled to 6-figure annual revenue while automating nearly all operative tasks",
+                "Built a full-stack webshop on Django Oscar",
+                "Integrated payments via PayPal and Stripe",
                 "Reporting with Apache Airflow and Metabase",
-                "Custom reports on marketing spend vs revenue",
+                "Custom reports to analyse marketing ROAS and customer lifetime value",
                 "Designed a custom bidding algorithm for Amazon Ads",
             ],
             technologies={
@@ -428,10 +429,6 @@ class Profile(BaseModel):
             end="2020/04",
             location="Remote",
             description="Contributed regularly to pandas to learn its internals and to give back to the community.",
-            bullet_points=[
-                "Frequent contributions to pandas",
-                "Focused on deepening understanding of library internals",
-            ],
             technologies={
                 "Python": ["Pandas", "Pytest"],
             },
@@ -449,8 +446,8 @@ class Profile(BaseModel):
                 "Managed campaigns worth >€100M after 1 year",
                 "Led the backend team and authored most backend code",
                 "Close collaboration with CTO, PO, other teams, and users",
-                "Proactive ideation and bottleneck identification",
                 "Drove architecture and feature discussions",
+                "Proactive ideation of new features and identification of current bottleneck",
                 "Mentored junior developers",
             ],
             technologies={
@@ -567,7 +564,6 @@ class Profile(BaseModel):
             end="2015/02",
             location="Leipzig",
             description="In-house expert for web tracking and reporting tools.",
-            bullet_points=[],
             technologies={
                 "Others": ["Adobe Analytics", "Excel", "Google Analytics", "Jira"],
             },

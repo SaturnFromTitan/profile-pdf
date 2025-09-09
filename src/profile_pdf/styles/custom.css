@@ -265,6 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .work-experience-description,
 .education-description {
+  font-size: 0.9em;
   margin-top: 2mm;
   margin-bottom: 2mm;
 }
@@ -274,6 +275,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .work-experience-bullet-points {
+  font-size: 0.9em;
   margin: 0;
   padding-left: 3.1mm;
 }
