@@ -67,7 +67,7 @@ class WorkExperience(BaseModel):
     company: str
     start: YearMonth
     end: YearMonth | None = None
-    location: str | None
+    location: str = "Remote"
     description: str
     bullet_points: list[str] = []
     technologies: dict[str, list[str]]
@@ -175,7 +175,6 @@ class Profile(BaseModel):
             company="Vonovia SE",
             start="2025/03",
             end="2025/07",
-            location="Remote",
             description="Helped Vonovia to extend its internal elevator IoT platform to support external clients.",
             bullet_points=[
                 "Took proactive role in architecture and feature design",
@@ -227,7 +226,6 @@ class Profile(BaseModel):
             company="Tomorrow Education Group",
             start="2025/05",
             end="2025/05",
-            location="Remote",
             description="Built a custom browser extension to automate tedious, critical workflows within a SaaS CMS.",
             bullet_points=[
                 "Gathered requirements directly with non-technical stakeholders to understand the business problem",
@@ -259,7 +257,6 @@ class Profile(BaseModel):
             company="Bayer AG",
             start="2023/01",
             end="2025/02",
-            location="Remote",
             description='Bayer\'s Crop Protection Innovation Lab builds AI-driven IoT products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
             bullet_points=[
                 "Integrated custom-built AI models to deliver real-time insights to customers",
@@ -476,7 +473,6 @@ class Profile(BaseModel):
         #     company="HelloFresh",
         #     start="2020/03",
         #     end="2020/03",
-        #     location="Remote",
         #     description="External audit of HelloFresh's Marketing Business Intelligence.",
         #     technologies={
         #         "Others": ["Facebook Ads", "Google Ads", "Google Analytics"],
@@ -488,7 +484,6 @@ class Profile(BaseModel):
         #     company="Pandas",
         #     start="2019/10",
         #     end="2020/04",
-        #     location="Remote",
         #     description="Contributed regularly to pandas to learn its internals and to give back to the community.",
         #     technologies={
         #         "Python": ["Pandas", "Pytest"],
@@ -566,7 +561,6 @@ class Profile(BaseModel):
         #     company="BlaBlaCar",
         #     start="2019/05",
         #     end="2019/07",
-        #     location=None,
         #     description="Build an internal application to automate Google Ads campaign managemnet.",
         #     technologies={
         #         "Python": [
@@ -674,7 +668,7 @@ class Profile(BaseModel):
             company="Spreadshirt AG",
             start="2013/02",
             end="2015/02",
-            location="Leipzig",
+            location="Leipzig & Berlin",
             description="In-house expert for web tracking and reporting tools.",
             technologies={
                 "Others": ["Adobe Analytics", "Excel", "Google Analytics", "Jira"],
