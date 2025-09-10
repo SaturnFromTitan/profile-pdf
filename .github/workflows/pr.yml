@@ -22,5 +22,10 @@ jobs:
       - name: Set up just (command runner)
         uses: extractions/setup-just@v3
 
+      # `just install` would also be run when before running `just lint/test` in the next step
+      # but having it as a separate step yields a nicer output in the GitHub Actions UI
+      - name: Install Python dependencies
+        run: just install
+
       - name: ${{ matrix.task }}
         run: just ${{ matrix.task }}

@@ -1,9 +1,12 @@
 set fallback := true
 set shell := ["bash", "-c"]
 
+# default recipe to display help information
+@list:
+  just --list
+
 # remove files created by tooling and packaging
 @clean:
-  rm -rf output
   rm -rf dist
   rm -rf deps
   rm -rf build
@@ -17,7 +20,7 @@ set shell := ["bash", "-c"]
   rm -rf .ruff_cache
   rm -rf **/.ruff_cache
   rm -rf htmlcov
-  rm -f docker/requirements.txt
+  rm -f public/profile.pdf
   rm -f .coverage
   rm -f .coverage.xml
   rm -f .junit.xml
@@ -34,8 +37,11 @@ set shell := ["bash", "-c"]
 @test *ARGS: install
   uv run pytest {{ ARGS }}
 
+# run all CI checks locally
+@all: clean lint test
+
 # generate PDF from HTML template using Docker
-@generate-pdf OPEN='1': install
+@generate-pdf OPEN='1':
   docker build -t pdf-generator .
   docker run --rm -v "$(pwd)/public:/app/public" pdf-generator
   @echo "PDF generation complete! Check the public/ directory for your PDF file."
