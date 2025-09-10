@@ -1,6 +1,6 @@
 import datetime
+import io
 import logging
-import sys
 import zoneinfo
 from pathlib import Path
 
@@ -15,23 +15,26 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> None:
-    # File paths
+    buffer = _main()
+
+    # persist to disk
     output_file = OUTPUT_DIR / "profile.pdf"
     output_file.parent.mkdir(parents=True, exist_ok=True)
+    output_file.write_bytes(buffer.getvalue())
 
-    # Create profile instance
+
+def _main() -> io.BytesIO:
+    target = io.BytesIO()
+
+    # Instantiate metadata
     profile = Profile()
 
-    # Generate HTML content from profile model
+    # render HTML content from profile model
     html_content = _render_html_template(profile)
 
-    # Generate PDF
-    success = _generate_pdf(html_content, output_file)
-
-    if success:
-        sys.exit(0)
-    else:
-        sys.exit(1)
+    # render PDF
+    _render_pdf(html_content, target)
+    return target
 
 
 def _render_html_template(profile: Profile) -> str:
@@ -45,27 +48,11 @@ def _render_html_template(profile: Profile) -> str:
     return template.render(profile=profile, today=today)
 
 
-def _generate_pdf(
-    html_content: str,
-    output_file: Path,
-) -> bool:
+def _render_pdf(html_content: str, target: io.BytesIO) -> bytes:
     """Generate PDF from HTML content and CSS file"""
-    try:
-        font_config = FontConfiguration()
-
-        # Create HTML object
-        html_doc = HTML(string=html_content, base_url=Path.cwd())
-
-        # Generate PDF
-        html_doc.write_pdf(
-            output_file,
-            stylesheets=[
-                CSS(filename=str(STYLES_DIR / "custom.css"), font_config=font_config),
-            ],
-            font_config=font_config,
-        )
-
-        return True
-    except Exception:
-        logger.exception("Failed to generate PDF")
-        return False
+    font_config = FontConfiguration()
+    stylesheets = [
+        CSS(filename=str(STYLES_DIR / "custom.css"), font_config=font_config),
+    ]
+    html_doc = HTML(string=html_content, base_url=Path.cwd())
+    return html_doc.write_pdf(target, stylesheets=stylesheets, font_config=font_config)
