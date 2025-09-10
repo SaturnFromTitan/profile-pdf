@@ -1,0 +1,55 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-experience,
+.education {
+  margin-bottom: 1.5rem;
+  /* Keep each work experience together on one page */
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.work-experience-title,
+.education-title {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: -0.2em; /* no idea why this is necessary. adjusting the line-height didn't work */
+}
+
+.work-experience-meta,
+.education-meta {
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--light-color);
+  margin-bottom: 0.2em;
+}
+
+.work-experience-technologies {
+  font-size: 0.8em;
+  background-color: var(--ultra-light-color);
+}
+
+.work-experience-technologies-group {
+  margin-right: 1em;
+}
+
+.work-experience-description,
+.education-description {
+  font-size: 0.9em;
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+}
+
+.work-experience-description a {
+  text-decoration: none;
+}
+
+.work-experience-bullet-points {
+  font-size: 0.9em;
+  margin: 0;
+  padding-left: 3.1mm;
+}

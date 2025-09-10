@@ -52,7 +52,9 @@ def _render_pdf(target: io.BytesIO, html_content: str) -> bytes:
     """Generate PDF from HTML content and CSS file"""
     font_config = FontConfiguration()
     stylesheets = [
-        CSS(filename=str(STYLES_DIR / "custom.css"), font_config=font_config),
+        CSS(filename=str(STYLES_DIR / "base.css"), font_config=font_config),
+        CSS(filename=str(STYLES_DIR / "cover_page.css")),
+        CSS(filename=str(STYLES_DIR / "experiences.css")),
     ]
     html_doc = HTML(string=html_content, base_url=Path.cwd())
     return html_doc.write_pdf(target, stylesheets=stylesheets, font_config=font_config)
