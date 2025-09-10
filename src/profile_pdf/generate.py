@@ -33,7 +33,7 @@ def _main() -> io.BytesIO:
     html_content = _render_html_template(profile)
 
     # render PDF
-    _render_pdf(html_content, target)
+    _render_pdf(target, html_content)
     return target
 
 
@@ -48,7 +48,7 @@ def _render_html_template(profile: Profile) -> str:
     return template.render(profile=profile, today=today)
 
 
-def _render_pdf(html_content: str, target: io.BytesIO) -> bytes:
+def _render_pdf(target: io.BytesIO, html_content: str) -> bytes:
     """Generate PDF from HTML content and CSS file"""
     font_config = FontConfiguration()
     stylesheets = [
