@@ -4,7 +4,7 @@ import logging
 import zoneinfo
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from weasyprint import CSS, HTML
 from weasyprint.text.fonts import FontConfiguration
 
@@ -40,7 +40,11 @@ def _main() -> io.BytesIO:
 def _render_html_template(profile: Profile) -> str:
     """Generate HTML content from profile model using Jinja2 template"""
     # Set up Jinja2 environment
-    env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
+    env = Environment(
+        loader=FileSystemLoader(TEMPLATES_DIR),
+        autoescape=True,
+        undefined=StrictUndefined,
+    )
     template = env.get_template("profile.html")
 
     # Render template with profile data
