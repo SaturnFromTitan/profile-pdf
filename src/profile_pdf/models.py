@@ -178,8 +178,8 @@ class Profile(BaseModel):
             location="Remote",
             description="Helped Vonovia to extend its internal elevator IoT platform to support external clients.",
             bullet_points=[
-                "Proactive role in architecture and feature design",
-                "Directly collaborated with users and non-technical stakeholders",
+                "Took proactive role in architecture and feature design",
+                "Collaborated directly with users and non-technical stakeholders",
                 "Developed features in a vast micro-service landscape",
                 "Upgraded tooling and drastically improved test coverage",
             ],
@@ -230,11 +230,11 @@ class Profile(BaseModel):
             location="Remote",
             description="Built a custom browser extension to automate tedious, critical workflows within a SaaS CMS.",
             bullet_points=[
-                "Discussed the business problem directly with non-technical stakeholders to gather requiremnts",
-                "Decided for a manifest v3 Chrome extension after comparing it to various alternative solutions",
-                "Private distribution to the Chrome Web Store",
-                "After 2 weeks, we launched smoothly",
-                "The tool significantly improved the efficiency of the marketing team",
+                "Gathered requirements directly with non-technical stakeholders to understand the business problem",
+                "Evaluated and selected manifest v3 Chrome extension after comparing various alternative solutions",
+                "Managed private distribution to the Chrome Web Store",
+                "Delivered smooth launch within 2 weeks",
+                "Improved marketing team efficiency significantly through automation",
             ],
             technologies={
                 "TypeScript": [
@@ -262,11 +262,11 @@ class Profile(BaseModel):
             location="Remote",
             description='Bayer\'s Crop Protection Innovation Lab builds AI-driven IoT products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
             bullet_points=[
-                "Integration of custom-built AI models to deliver real-time insights to customers",
-                "Backend for mobile apps and tens of thousands of IoT devices and DJI drones",
+                "Integrated custom-built AI models to deliver real-time insights to customers",
+                "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
                 "Cost-effective, serverless, event-driven ingestion of GBs of image data on AWS",
-                "Proactive role in architecture and feature design",
-                "Proactive cross-team communication",
+                "Took proactive role in architecture and feature design",
+                "Maintained proactive cross-team communication",
                 "Reference expert for Python",
             ],
             technologies={
@@ -375,7 +375,7 @@ class Profile(BaseModel):
                 "In-house experts reviewed CVs and matched candidates to open positions",
                 "As the sole developer, I was responsible for FE, BE, infrastructure, deployments and observability",
                 "Optimized applicant-facing pages for mobile",
-                "After 2 months, we launched smoothly to an international user base",
+                "After less than 2 months, we launched smoothly to an international user base",
             ],
             technologies={
                 "Python": [
@@ -421,9 +421,9 @@ class Profile(BaseModel):
                 "Scaled to 6-figure annual revenue while automating nearly all operative tasks",
                 "Built a full-stack webshop on Django Oscar",
                 "Integrated payments via PayPal and Stripe",
-                "Reporting with Apache Airflow and Metabase",
-                "Custom reports to analyse marketing ROAS and customer lifetime value",
-                "Designed a custom bidding algorithm for Amazon Ads",
+                "Implemented reporting with Apache Airflow and Metabase",
+                "Created custom reports to analyze marketing ROAS and customer lifetime value",
+                "Designed custom bidding algorithm for Amazon Ads",
             ],
             technologies={
                 "Python": [
@@ -506,9 +506,9 @@ class Profile(BaseModel):
                 "Onboarded first users after 2 months; deprecated Salesforce after 4 months",
                 "Managed campaigns worth >€100M after 1 year",
                 "Led the backend team and authored most backend code",
-                "Close collaboration with CTO, PO, other teams, and users",
+                "Collaborated closely with CTO, PO, other teams, and users",
                 "Drove architecture and feature discussions",
-                "Proactive ideation of new features and identification of current bottleneck",
+                "Identified bottlenecks and proactively ideated new features",
                 "Mentored junior developers",
             ],
             technologies={
@@ -589,8 +589,8 @@ class Profile(BaseModel):
             location="Berlin",
             description="Automate critical sales processes to enable growth.",
             bullet_points=[
-                "Flask microservices to create sales reports and slide decks",
-                "Close collaboration with CTO, BI, and Sales",
+                "Built Flask microservices to create sales reports and slide decks",
+                "Collaborated closely with CTO, BI, and Sales teams",
             ],
             technologies={
                 "Python": [
@@ -653,8 +653,8 @@ class Profile(BaseModel):
             location="Berlin",
             description="Dramatically improved efficiency and decision-making with custom tools for online marketing platforms.",
             bullet_points=[
-                "Designed and implemented a Google Ads bidding algorithm",
-                "Built scripts/tools to automate online marketing campaign management",
+                "Designed and implemented Google Ads bidding algorithm",
+                "Built scripts and tools to automate online marketing campaign management",
             ],
             technologies={
                 "Python": ["Pandas", "Pytest"],
