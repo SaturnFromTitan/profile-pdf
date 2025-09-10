@@ -141,22 +141,22 @@ class Profile(BaseModel):
             technologies=[
                 Technology(name="Amazon Web Services (AWS)", years=6),
                 Technology(name="AWS Serverless", years=2),
+                Technology(name="Infrastructure as Code (IaC)", years=5),
                 Technology(name="CI/CD", years=7),
                 Technology(name="Docker", years=7),
-                Technology(name="Infrastructure as Code (IaC)", years=5),
                 Technology(name="Kubernetes", years=2),
             ],
         ),
         CoreSkill(
             subject="Others",
             technologies=[
-                Technology(name="SQL Databases", years=6),
-                Technology(name="NoSQL Databases", years=3),
+                Technology(name="Test-Driven Development", years=9),
                 Technology(name="Microservices", years=6),
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
                 Technology(name="Event-Driven Software Architectures", years=4),
-                Technology(name="Test-Driven Development", years=9),
+                Technology(name="SQL Databases", years=6),
+                Technology(name="NoSQL Databases", years=3),
             ],
         ),
     ]
