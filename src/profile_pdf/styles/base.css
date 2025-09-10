@@ -1,0 +1,88 @@
+/* Font faces */
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-CondensedRegular.otf") format("opentype");
+  font-weight: 400;
+  font-stretch: condensed;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-CondensedItalic.otf") format("opentype");
+  font-weight: 400;
+  font-stretch: condensed;
+  font-style: italic;
+}
+
+/* Paged media setup for WeasyPrint */
+@page {
+  size: A4;
+  margin: 18mm;
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-size: 10pt;
+  }
+}
+
+/* Variables */
+:root {
+  --primary-color: #E58900;
+  --secondary-color:  #22547A;
+  --light-color: #656C81;
+  --ultra-light-color: #F0F0F0;
+}
+
+/* Generic tags */
+html, body {
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "League Gothic", "PT Sans", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
