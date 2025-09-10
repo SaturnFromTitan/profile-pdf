@@ -18,4 +18,4 @@ Now you can render the profile via
 just generate-pdf
 ```
 
-The file will be available in `outputs/profile.pdf`
+The file will be available in `public/profile.pdf`.

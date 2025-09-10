@@ -9,4 +9,4 @@ STYLES_DIR = PACKAGE_DIR / "styles"
 MEDIA_DIR = PACKAGE_DIR / "media"
 
 # outputs
-OUTPUT_DIR = REPO_ROOT / "output"
+OUTPUT_DIR = REPO_ROOT / "public"
