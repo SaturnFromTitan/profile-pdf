@@ -22,16 +22,20 @@ set shell := ["bash", "-c"]
   rm -f .coverage.xml
   rm -f .junit.xml
 
+# install project & dependencies without updating the .lock file
+@install:
+  uv sync --locked
+
 # run pre-commit linters on all files
-@lint:
+@lint: install
   uv run pre-commit run --all-files
 
 # run python tests
-@test *ARGS:
+@test *ARGS: install
   uv run pytest {{ ARGS }}
 
 # generate PDF from HTML template using Docker
-@generate-pdf OPEN='1':
+@generate-pdf OPEN='1': install
   docker build -t pdf-generator .
   docker run --rm -v "$(pwd)/public:/app/public" pdf-generator
   @echo "PDF generation complete! Check the public/ directory for your PDF file."

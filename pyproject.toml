@@ -1,6 +1,6 @@
 [project]
 name = "profile-pdf"
-version = "0.1.0"
+version = "1.0.0"
 description = "Generates my profile as a PDF"
 readme = "README.md"
 requires-python = "==3.12.*"  # python doesn't follow semantic versioning, so we lock the minor version
@@ -126,7 +126,15 @@ ignore = [
 
 
 [tool.ruff.lint.per-file-ignores]
-"src/profile_pdf/models.py" = ["ERA001"]
+"tests/*" = [
+  "S101",  # assert: asserts are allowed in tests
+  "PLR2004",  # magic-value-comparison: magic values are ok in tests
+  "PLR0913",  # too-many-arguments: tests can use as many arguments (i.e. fixtures) as they like
+  "SLF001",  # private-member-access: private methods can be used in tests
+]
+"src/profile_pdf/models.py" = [
+  "ERA001" # commented-out-code: commented projects should be kept, they might be included for dedicated projects
+]
 
 [tool.ruff.lint.pylint]
 max-args = 8
