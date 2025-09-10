@@ -4,7 +4,7 @@
   {% for we in profile.work_experience %}
   <div class="work-experience">
     <h3 class="work-experience-title">{{ we.title }}{% if we.contract_type %} ({{ we.contract_type }}){% endif %}</h3>
-    <h4 class="work-experience-meta">{{ we.company }} | {% if we.end %}{{ we.start }} - {{ we.end }}{% else %}Since {{ we.start }}{% endif %} | {{ we.location }}</h4>
+    <h4 class="work-experience-meta">{{ we.company }} | {{ we | format_duration }} | {{ we.location }}</h4>
     <div class="work-experience-technologies">
       {% for tech_category, tech_list in we.technologies.items() %}
         <span class="work-experience-technologies-group"><strong>{{ tech_category }}: </strong>{{ tech_list | sort | join(', ') }}</span>
@@ -23,7 +23,7 @@
   {% for ed in profile.education %}
   <div class="education">
     <h3 class="education-title">{{ ed.degree }}</h3>
-    <h4 class="education-meta">{{ ed.field_of_study }} | {{ ed.institution }} | {% if ed.end %}{{ ed.start }} - {{ ed.end }}{% else %}Since {{ ed.start }}{% endif %}</h4>
+    <h4 class="education-meta">{{ ed.field_of_study }} | {{ ed.institution }} | {{ ed | format_duration }}</h4>
     <p class="education-description">
       <strong>Specialisation:</strong> {{ ed.specialisation }}<br>
       <strong>Thesis:</strong> {{ ed.thesis }}

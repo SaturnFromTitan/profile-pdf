@@ -9,7 +9,7 @@ from weasyprint import CSS, HTML
 from weasyprint.text.fonts import FontConfiguration
 
 from . import OUTPUT_DIR, STYLES_DIR, TEMPLATES_DIR
-from .models import Profile
+from .models import Education, Profile, WorkExperience
 
 logger = logging.getLogger(__name__)
 
@@ -45,11 +45,20 @@ def _render_html_template(profile: Profile) -> str:
         autoescape=True,
         undefined=StrictUndefined,
     )
+    env.filters["format_duration"] = _format_duration
+
     template = env.get_template("profile.html")
 
     # Render template with profile data
     today = datetime.datetime.now(tz=zoneinfo.ZoneInfo("Europe/Berlin")).date()
     return template.render(profile=profile, today=today)
+
+
+def _format_duration(obj: WorkExperience | Education) -> str:
+    """Format duration string from an object with start and end attributes"""
+    if obj.end:
+        return f"{obj.start} - {obj.end}"
+    return f"Since {obj.start}"
 
 
 def _render_pdf(target: io.BytesIO, html_content: str) -> bytes:
