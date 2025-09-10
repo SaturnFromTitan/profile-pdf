@@ -31,11 +31,12 @@ set shell := ["bash", "-c"]
   uv run pytest {{ ARGS }}
 
 # generate PDF from HTML template using Docker
-@generate-pdf: && open
+@generate-pdf OPEN='1':
   docker build -t pdf-generator .
-  docker run --rm -v "$(pwd)/output:/app/output" pdf-generator
-  @echo "PDF generation complete! Check the output/ directory for your PDF file."
+  docker run --rm -v "$(pwd)/public:/app/public" pdf-generator
+  @echo "PDF generation complete! Check the public/ directory for your PDF file."
+  if [ "{{OPEN}}" = "1" ]; then just open; fi
 
 # open the generated PDF
 @open:
-  open output/profile.pdf
+  open public/profile.pdf

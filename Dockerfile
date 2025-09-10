@@ -33,8 +33,5 @@ RUN uv sync \
     --no-dev \
     --no-editable
 
-# Create output directory
-RUN mkdir -p /app/output
-
 # Set the default command
 CMD ["uv", "run", "--no-dev", "generate-pdf"]
