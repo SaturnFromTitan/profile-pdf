@@ -1,0 +1,91 @@
+<div class="background-div"></div>
+
+<div class="cover-page">
+  <aside class="sidebar">
+    <div class="sidebar-content">
+
+      <img src="{{ profile.profile_image_path }}" alt="{{ profile.name }}" class="sidebar-image">
+
+      <h2 class="sidebar-section-title">Personal Information</h2>
+
+        <h3 class="sidebar-section-field">Name</h3>
+        <div class="sidebar-section-value">{{ profile.name }}</div>
+
+        <h3 class="sidebar-section-field">Location</h3>
+        <div class="sidebar-section-value">{{ profile.location }}</div>
+
+        <h3 class="sidebar-section-field">Languages</h3>
+        <ul class="sidebar-section-value">
+          {% for lang in profile.languages %}
+          <li>{{ lang.language }}: {{ lang.proficiency }}</li>
+          {% endfor %}
+        </ul>
+
+      <h2 class="sidebar-section-title">Contact</h2>
+
+        <h3 class="sidebar-section-field">E-Mail</h3>
+        <div class="sidebar-section-value">{{ profile.email }}</div>
+
+        <h3 class="sidebar-section-field">LinkedIn</h3>
+        <!-- todo: mkae this a link -->
+        <div class="sidebar-section-value">
+          <a href="https://www.linkedin.com/in/martin-winkel" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a>
+        </div>
+
+        <h3 class="sidebar-section-field">Phone</h3>
+        <div class="sidebar-section-value">{{ profile.phone }}</div>
+
+      <h2 class="sidebar-section-title">Links</h2>
+
+        <h3 class="sidebar-section-field">GitHub</h3>
+        <!-- todo: mkae this a link -->
+        <div class="sidebar-section-value">
+          <a href="https://github.com/{{ profile.links.github }}" target="_blank" rel="noopener noreferrer">@{{ profile.links.github }}</a>
+        </div>
+
+        <h3 class="sidebar-section-field">Blog (Medium)</h3>
+        <!-- todo: mkae this a link -->
+        <div class="sidebar-section-value">
+          <a href="https://medium.com/@{{ profile.links.medium }}" target="_blank" rel="noopener noreferrer">@{{ profile.links.medium }}</a>
+        </div>
+
+    </div>
+  </aside>
+
+  <section class="content">
+
+    <div class="tech-icons">
+      {% for icon_path in profile.icon_paths %}
+      <img src="{{ icon_path }}" alt="icon" class="tech-icon">
+      {% endfor %}
+    </div>
+
+    <div class="summary">
+      {% for line in profile.summary %}
+      <p>{{ line | safe }}</p>
+      {% endfor %}
+    </div>
+
+    <h2 class="content-headline">Core Technologies</h2>
+      <ul>
+        {% for core_skill in profile.core_skills %}
+        <li class="content-skill-group">
+          <h3 class="content-skill-section-title">{{ core_skill.subject }}:</h3>
+          <ul>
+            {% for technology in core_skill.technologies %}
+            <li>{{ technology.name }}: {{ technology.years }} {% if technology.years == 1 %}year{% else %}years{% endif %}</li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+
+
+    <h2 class="content-headline">Certifications</h2>
+      <ul class="certifications">
+        {% for certification in profile.certifications %}
+        <li>{{ certification.name }} ({{ certification.code }})</li>
+        {% endfor %}
+      </ul>
+  </section>
+</div>
