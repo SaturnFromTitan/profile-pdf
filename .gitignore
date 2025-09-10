@@ -175,7 +175,6 @@ Temporary Items
 .uv-config.json
 .uv-env/
 .uv-virtualenv/
-uv.lock
 
 # HTML/CSS build artifacts
 *.css.map
