@@ -46,7 +46,7 @@ jobs:
         with:
           tag_name: v${{ needs.ci-checks.outputs.version }}
           name: Release v${{ needs.ci-checks.outputs.version }}
-          files: public/profile.pdf
+          files: public/*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
