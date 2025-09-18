@@ -42,11 +42,10 @@ set shell := ["bash", "-c"]
 @all: clean lint test
 
 # generate PDF from HTML template using Docker (production stage)
-@generate-pdf OPEN='1':
+@generate-pdf: && open
   docker build --target production -t pdf-generator .
   docker run --rm -v "$(pwd)/public:/app/public" pdf-generator
   @echo "PDF generation complete! Check the public/ directory for your PDF file."
-  if [ "{{OPEN}}" = "1" ]; then just open; fi
 
 # open the generated PDF
 @open:
