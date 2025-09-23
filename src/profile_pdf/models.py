@@ -63,6 +63,7 @@ class WorkExperience(BaseModel):
     """Work Experience"""
 
     title: str
+    logo: pathlib.Path
     contract_type: ContractType | None
     company: str
     start: YearMonth
@@ -76,6 +77,7 @@ class WorkExperience(BaseModel):
 class Education(BaseModel):
     """Education"""
 
+    logo: pathlib.Path
     field_of_study: str
     institution: str
     degree: str
@@ -171,6 +173,7 @@ class Profile(BaseModel):
     work_experience: list[WorkExperience] = [
         WorkExperience(
             title="Senior Backend Developer",
+            logo=MEDIA_DIR / "comp-logo-vonovia.jpeg",
             contract_type=ContractType.FREELANCE,
             company="Vonovia SE",
             start="2025/03",
@@ -222,6 +225,7 @@ class Profile(BaseModel):
         ),
         WorkExperience(
             title="Lead Full-Stack Developer",
+            logo=MEDIA_DIR / "comp-logo-teg.jpeg",
             contract_type=ContractType.FREELANCE,
             company="Tomorrow Education Group",
             start="2025/05",
@@ -253,6 +257,7 @@ class Profile(BaseModel):
         ),
         WorkExperience(
             title="Senior Backend Developer",
+            logo=MEDIA_DIR / "comp-logo-bayer.jpeg",
             contract_type=ContractType.FREELANCE,
             company="Bayer AG",
             start="2023/01",
@@ -344,6 +349,7 @@ class Profile(BaseModel):
         ),
         # WorkExperience(
         #     title="Solution Architect",
+        #     logo=MEDIA_DIR / "comp-logo-selly.jpeg",
         #     contract_type=ContractType.CONSULTANT,
         #     company="Selly Biz",
         #     start="2023/05",
@@ -361,6 +367,7 @@ class Profile(BaseModel):
         # ),
         WorkExperience(
             title="Lead Full Stack Developer",
+            logo=MEDIA_DIR / "comp-logo-selly.jpeg",
             contract_type=ContractType.CONSULTANT,
             company="Selly Biz",
             start="2022/08",
@@ -408,6 +415,7 @@ class Profile(BaseModel):
         ),
         WorkExperience(
             title="Lead Full Stack Developer & Co-Founder",
+            logo=MEDIA_DIR / "comp-logo-lemontree.jpeg",
             contract_type=ContractType.EMPLOYED,
             company="Lemon Tree",
             start="2021/07",
@@ -469,6 +477,7 @@ class Profile(BaseModel):
         ),
         # WorkExperience(
         #     title="External Advisor",
+        #     logo=MEDIA_DIR / "comp-logo-hellofresh.jpeg",
         #     contract_type=ContractType.CONSULTANT,
         #     company="HelloFresh",
         #     start="2020/03",
@@ -480,6 +489,7 @@ class Profile(BaseModel):
         # ),
         # WorkExperience(
         #     title="Open Source Contributor",
+        #     logo=MEDIA_DIR / "comp-logo-pandas.jpeg",
         #     contract_type=None,
         #     company="Pandas",
         #     start="2019/10",
@@ -491,6 +501,7 @@ class Profile(BaseModel):
         # ),
         WorkExperience(
             title="Lead Backend Developer",
+            logo=MEDIA_DIR / "comp-logo-zalando.jpeg",
             contract_type=ContractType.CONSULTANT,
             company="Zalando Marketing Services",
             start="2018/12",
@@ -557,6 +568,7 @@ class Profile(BaseModel):
         ),
         # WorkExperience(
         #     title="Backend Developer",
+        #     logo=MEDIA_DIR / "comp-logo-blablacar.jpeg",
         #     contract_type=ContractType.CONSULTANT,
         #     company="BlaBlaCar",
         #     start="2019/05",
@@ -576,6 +588,7 @@ class Profile(BaseModel):
         # ),
         WorkExperience(
             title="Backend Developer",
+            logo=MEDIA_DIR / "comp-logo-zalando.jpeg",
             contract_type=ContractType.CONSULTANT,
             company="Zalando Marketing Services",
             start="2018/02",
@@ -610,6 +623,7 @@ class Profile(BaseModel):
         ),
         # WorkExperience(
         #     title="Data Engineer",
+        #     logo=MEDIA_DIR / "comp-logo-clearly.jpeg",
         #     contract_type=ContractType.CONSULTANT,
         #     company="Clearly",
         #     start="2017/09",
@@ -625,6 +639,7 @@ class Profile(BaseModel):
         # ),
         # WorkExperience(
         #     title="Performance Marketing Automation Engineer",
+        #     logo=MEDIA_DIR / "comp-logo-omio.jpeg",
         #     contract_type=ContractType.FREELANCE,
         #     company="Omio (formerly GoEuro)",
         #     start="2017/02",
@@ -640,6 +655,7 @@ class Profile(BaseModel):
         # ),
         WorkExperience(
             title="Performance Marketing Automation Engineer",
+            logo=MEDIA_DIR / "comp-logo-auto1.jpeg",
             contract_type=ContractType.EMPLOYED,
             company="Auto1 AG",
             start="2016/02",
@@ -664,6 +680,7 @@ class Profile(BaseModel):
         ),
         WorkExperience(
             title="Web Analyst (Part-Time)",
+            logo=MEDIA_DIR / "comp-logo-spreadshirt.jpeg",
             contract_type=ContractType.EMPLOYED,
             company="Spreadshirt AG",
             start="2013/02",
@@ -679,9 +696,10 @@ class Profile(BaseModel):
     # Education
     education: list[Education] = [
         Education(
+            logo=MEDIA_DIR / "ed-logo-unileipzig.jpeg",
             field_of_study="Economical Mathematics",
             institution="Leipzig University",
-            degree="Diplom (equal to Master of Science)",
+            degree="Diplom (equal to M.Sc.)",
             start="2010/10",
             end="2016/02",
             specialisation="Mathematical optimisation of business problems",
