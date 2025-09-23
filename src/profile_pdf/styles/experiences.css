@@ -11,6 +11,26 @@
   page-break-inside: avoid;
 }
 
+.work-experience-header,
+.education-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.work-experience-logo,
+.education-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.work-experience-text,
+.education-text {
+  flex: 1;
+}
+
 .work-experience-title,
 .education-title {
   text-transform: uppercase;
