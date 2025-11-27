@@ -22,10 +22,26 @@
       border: none;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const iframe = document.createElement('iframe');
+
+      if (isIOS) {
+        // Use Google Drive viewer for iOS devices (fixes first-page-only issue)
+        const pdfUrl = 'https://' + window.location.host + '/profile.pdf';
+        iframe.src = 'https://drive.google.com/viewerng/viewer?embedded=true&url=' + encodeURIComponent(pdfUrl);
+      } else {
+        // Direct PDF embed for other devices which is more reliable
+        iframe.src = 'profile.pdf';
+      }
+
+      iframe.type = 'application/pdf';
+      document.body.appendChild(iframe);
+    });
+  </script>
 </head>
 <body>
-  <!-- See the following link as to why we show the PDF via Google Drive:
-  https://stackoverflow.com/questions/75511392/pdf-in-iframe-only-first-page-on-iphone-ipad-view -->
-  <iframe src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://pythomation.de/profile.pdf"></iframe>
+  <!-- PDF will be loaded via JavaScript above -->
 </body>
 </html>
