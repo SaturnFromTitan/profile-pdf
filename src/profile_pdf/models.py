@@ -172,6 +172,39 @@ class Profile(BaseModel):
     # Work Experience
     work_experience: list[WorkExperience] = [
         WorkExperience(
+            title="App Developer",
+            logo=MEDIA_DIR / "comp-logo-pull-up-club.jpeg",
+            contract_type=None,
+            company="Personal",
+            start="2025/10",
+            end="2025/11",
+            description="Hobby project to learn mobile app development and build an iOS workout app.",
+            bullet_points=[
+                "Production-grade code, tooling and stability",
+                "Offline-first architecture with local database and sync to cloud",
+                'Published to the Apple <a href="https://apps.apple.com/app/pull-up-club/id6754757771">App Store</a>',
+                'Source code published on <a href="https://github.com/SaturnFromTitan/pull-up-club">GitHub</a>',
+            ],
+            technologies={
+                "Dart": [
+                    "Drift",
+                    "Flutter",
+                    "Provider",
+                ],
+                "Others": [
+                    "AppStore Connect",
+                    "Fastlane",
+                    "Figma Make",
+                    "GitHub Actions",
+                    "GitHub Pages",
+                    "TestFlight",
+                    "Sqlite",
+                    "Supabase",
+                    "XCode",
+                ],
+            },
+        ),
+        WorkExperience(
             title="Senior Backend Developer",
             logo=MEDIA_DIR / "comp-logo-vonovia.jpeg",
             contract_type=ContractType.FREELANCE,
@@ -328,6 +361,7 @@ class Profile(BaseModel):
                     "DrawIO",
                     "FigJam",
                     "GitHub Actions",
+                    "GitHub Pages",
                     "GitLab CI",
                     "Go",
                     "HTML",
@@ -340,6 +374,7 @@ class Profile(BaseModel):
                     "Sentry",
                     "SonarQube",
                     "Terraform",
+                    "TestFlight",
                     "TFSec",
                     "Trivy",
                     "TypeScript",
