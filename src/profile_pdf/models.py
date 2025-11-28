@@ -180,9 +180,9 @@ class Profile(BaseModel):
             end="2025/11",
             description="Hobby project to learn mobile app development and build an iOS workout app.",
             bullet_points=[
-                "Production-grade code, tooling and stability",
+                "Production-grade in terms of code-quality, tooling and stability",
                 "Offline-first architecture with local database and sync to cloud",
-                'Published to the Apple <a href="https://apps.apple.com/app/pull-up-club/id6754757771">App Store</a>',
+                'Published to the Apple\'s <a href="https://apps.apple.com/app/pull-up-club/id6754757771">App Store</a>',
                 'Source code published on <a href="https://github.com/SaturnFromTitan/pull-up-club">GitHub</a>',
             ],
             technologies={
@@ -216,7 +216,7 @@ class Profile(BaseModel):
                 "Took proactive role in architecture and feature design",
                 "Collaborated directly with users and non-technical stakeholders",
                 "Developed features in a vast micro-service landscape",
-                "Upgraded tooling and drastically improved test coverage",
+                "Upgraded tooling and improve app stability",
             ],
             technologies={
                 "Python": [
@@ -301,6 +301,7 @@ class Profile(BaseModel):
                 "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
                 "Cost-effective, serverless, event-driven ingestion of GBs of image data on AWS",
                 "Took proactive role in architecture and feature design",
+                "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
                 "Reference expert for Python",
             ],
