@@ -73,3 +73,9 @@
   margin: 0;
   padding-left: 3.1mm;
 }
+
+.avoid-page-break {
+  /* Education only has a single entry, so it shouldn't break after the headline */
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
