@@ -171,42 +171,57 @@ class Profile(BaseModel):
 
     # Work Experience
     work_experience: list[WorkExperience] = [
-        # WorkExperience(
-        #     title="App Developer",
-        #     logo=MEDIA_DIR / "comp-logo-pull-up-club.jpeg",
-        #     contract_type=None,
-        #     company="Personal",
-        #     start="2025/10",
-        #     end="2025/11",
-        #     description="Hobby project to learn mobile app development and build an iOS workout app.",
-        #     bullet_points=[
-        #         "Production-grade in terms of code-quality, tooling and stability",
-        #         "Offline-first architecture with local database and sync to cloud",
-        #         'Published to the Apple\'s <a href="https://apps.apple.com/app/pull-up-club/id6754757771">App Store</a>',
-        #         'Source˚ code published on <a href="https://github.com/SaturnFromTitan/pull-up-club">GitHub</a>',
-        #     ],
-        #     technologies={
-        #         "Dart": [
-        #             "Drift",
-        #             "Flutter",
-        #             "Provider",
-        #         ],
-        #         "Others": [
-        #             "AppStore Connect",
-        #             "Fastlane",
-        #             "Figma Make",
-        #             "Figma MCP",
-        #             "GitHub Actions",
-        #             "GitHub Pages",
-        #             "PostgreSQL",
-        #             "PostgREST",
-        #             "TestFlight",
-        #             "Sqlite",
-        #             "Supabase",
-        #             "XCode",
-        #         ],
-        #     },
-        # ),
+        WorkExperience(
+            title="App Developer",
+            logo=MEDIA_DIR / "comp-logo-pull-up-club.jpeg",
+            contract_type=None,
+            company="Personal",
+            start="2025/11",
+            end="2025/12",
+            description="Built a production-ready iOS workout app.",
+            bullet_points=[
+                "Designed and implemented offline-first architecture with local SQLite database (Drift ORM) and bidirectional cloud sync to Supabase",
+                "Implemented immutable workout data model with soft-deletion support for reliable sync across devices",
+                "Built comprehensive logging system with file-based rotation and Sentry integration for crash reporting and error tracking",
+                "Set up complete CI/CD pipeline with Fastlane and GitHub Actions for automated TestFlight deployments",
+                "Integrated Apple Sign-In for secure authentication and cloud sync across user devices",
+                "Created iOS widget extension and Live Activities for real-time workout tracking on the home screen and Dynamic Island",
+                'Published to the <a href="https://apps.apple.com/app/pull-up-club/id6754757771">Apple App Store</a> and maintained privacy policy on GitHub Pages',
+                'Open-sourced the entire codebase on <a href="https://github.com/SaturnFromTitan/pull-up-club">GitHub</a> with comprehensive documentation',
+            ],
+            technologies={
+                "Dart": [
+                    "Drift",
+                    "Flutter",
+                    "Provider",
+                ],
+                "Swift": [
+                    "ActivityKit",
+                    "WidgetKit",
+                ],
+                "Backend": [
+                    "PostgreSQL",
+                    "PostgREST",
+                    "Supabase",
+                ],
+                "DevOps": [
+                    "AppStore Connect",
+                    "Fastlane",
+                    "GitHub Actions",
+                    "GitHub Pages",
+                    "TestFlight",
+                ],
+                "Others": [
+                    "Apple Sign-In",
+                    "Figma Make",
+                    "Figma MCP",
+                    "Pre-Commit",
+                    "Sentry",
+                    "SQLite",
+                    "XCode",
+                ],
+            },
+        ),
         WorkExperience(
             title="Senior Backend Developer",
             logo=MEDIA_DIR / "comp-logo-vonovia.jpeg",
