@@ -172,7 +172,7 @@ class Profile(BaseModel):
     # Work Experience
     work_experience: list[WorkExperience] = [
         WorkExperience(
-            title="App Developer",
+            title="Full-Stack App Developer",
             logo=MEDIA_DIR / "comp-logo-pull-up-club.jpeg",
             contract_type=None,
             company="Personal",
@@ -180,12 +180,10 @@ class Profile(BaseModel):
             end="2025/12",
             description="Built a production-ready iOS workout app.",
             bullet_points=[
-                "Designed and implemented offline-first architecture with local SQLite database (Drift ORM) and bidirectional cloud sync to Supabase",
-                "Implemented immutable workout data model with soft-deletion support for reliable sync across devices",
-                "Built comprehensive logging system with file-based rotation and Sentry integration for crash reporting and error tracking",
-                "Set up complete CI/CD pipeline with Fastlane and GitHub Actions for automated TestFlight deployments",
-                "Integrated Apple Sign-In for secure authentication and cloud sync across user devices",
-                "Created iOS widget extension and Live Activities for real-time workout tracking on the home screen and Dynamic Island",
+                "Offline-first architecture with optional bidirectional cloud sync",
+                "iOS widget extension and Live Activities for home screen and Dynamic Island",
+                "CI/CD pipeline with Fastlane and GitHub Actions for automated TestFlight deployments",
+                "Apple Sign-In integration for authentication and cloud sync",
                 'Published to the <a href="https://apps.apple.com/app/pull-up-club/id6754757771">Apple App Store</a> and maintained privacy policy on GitHub Pages',
                 'Open-sourced the entire codebase on <a href="https://github.com/SaturnFromTitan/pull-up-club">GitHub</a> with comprehensive documentation',
             ],
