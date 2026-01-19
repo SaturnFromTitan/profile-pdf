@@ -191,3 +191,4 @@ node_modules/
 
 *.temp.css
 public/profile.pdf
+.env

@@ -22,6 +22,7 @@ jobs:
 
       - name: Build docker container and generate PDF
         run: |
+          touch .env
           docker build --target production -t pdf-generator .
           docker run --rm -v "$(pwd)/public:/app/public" pdf-generator
 

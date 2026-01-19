@@ -6,6 +6,8 @@ from pydantic import BaseModel, StringConstraints
 
 from . import MEDIA_DIR
 
+DEFAULT_PHONE_NUMBER = "(upon request)"
+
 YearMonth = Annotated[str, StringConstraints(pattern=r"^20\d{2}/(0[1-9]|1[0-2])$")]
 
 
@@ -106,7 +108,7 @@ class Profile(BaseModel):
     ]
 
     # Contact information
-    phone: str = "(upon request)"
+    phone: str = DEFAULT_PHONE_NUMBER
     email: str = "martin@pythonation.de"
     linkedin: str = "@martin-winkel"
 

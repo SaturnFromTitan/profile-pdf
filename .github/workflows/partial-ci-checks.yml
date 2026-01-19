@@ -77,5 +77,6 @@ jobs:
 
       - name: Test
         run: |
+          touch .env
           docker build --target test -t pdf-generator-test .
           docker run --rm pdf-generator-test uv run pytest --cov=src
