@@ -4,12 +4,13 @@ import logging
 import zoneinfo
 from pathlib import Path
 
+import dotenv
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from weasyprint import CSS, HTML
 from weasyprint.text.fonts import FontConfiguration
 
-from . import OUTPUT_DIR, STYLES_DIR, TEMPLATES_DIR
-from .models import Education, Profile, WorkExperience
+from . import OUTPUT_DIR, REPO_ROOT, STYLES_DIR, TEMPLATES_DIR
+from .models import DEFAULT_PHONE_NUMBER, Education, Profile, WorkExperience
 
 logger = logging.getLogger(__name__)
 
@@ -26,8 +27,13 @@ def main() -> None:
 def _main() -> io.BytesIO:
     target = io.BytesIO()
 
+    # Load .env file if it exists
+    env_file = REPO_ROOT / ".env"
+    config = dotenv.dotenv_values(env_file)
+    phone_number = config.get("PHONE_NUMBER") or DEFAULT_PHONE_NUMBER
+
     # Instantiate metadata
-    profile = Profile()
+    profile = Profile(phone=phone_number)
 
     # render HTML content from profile model
     html_content = _render_html_template(profile)

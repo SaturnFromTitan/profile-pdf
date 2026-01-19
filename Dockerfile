@@ -48,6 +48,7 @@ RUN uv sync \
 # Copy files and install project
 COPY src/ ./src/
 COPY README.md ./
+COPY .env ./.env
 RUN uv sync \
     --locked \
     --no-dev \
