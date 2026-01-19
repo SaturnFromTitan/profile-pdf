@@ -1,6 +1,6 @@
 [project]
 name = "profile-pdf"
-version = "1.2.3"
+version = "1.2.4"
 description = "Generates my profile as a PDF"
 readme = "README.md"
 requires-python = "==3.12.*"  # python doesn't follow semantic versioning, so we lock the minor version
