@@ -154,7 +154,10 @@ class Profile(BaseModel):
         CoreSkill(
             subject="Others",
             technologies=[
-                Technology(name="Test-Driven Development", years=10),
+                Technology(
+                    name="Test-Driven Development (unit, integration, e2e)",
+                    years=10,
+                ),
                 Technology(name="Microservices", years=6),
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
@@ -216,6 +219,7 @@ class Profile(BaseModel):
         #             "Apple Sign-In",
         #             "Figma Make",
         #             "Figma MCP",
+        #             "Git",
         #             "Pre-Commit",
         #             "Sentry",
         #             "SQLite",
@@ -264,11 +268,13 @@ class Profile(BaseModel):
                     "Bash",
                     "ConceptBoard",
                     "Docker",
+                    "Git",
                     "Grafana",
                     "Helm",
                     "Just",
                     "K9s",
                     "MariaDB",
+                    "MySQL",
                     "OpenAPI",
                     "PostgreSQL",
                     "Pre-Commit",
@@ -301,6 +307,7 @@ class Profile(BaseModel):
                 "Others": [
                     "CSS",
                     "Chrome Web Store",
+                    "Git",
                     "GitHub Actions",
                     "HTML",
                     "Just",
@@ -387,6 +394,7 @@ class Profile(BaseModel):
                     "DrawIO",
                     "FigJam",
                     "Flutter",
+                    "Git",
                     "GitHub Actions",
                     "GitHub Pages",
                     "GitLab CI",
@@ -460,6 +468,7 @@ class Profile(BaseModel):
                     "Dependabot",
                     "Docker",
                     "DrawIO",
+                    "Git",
                     "GitHub Actions",
                     "Heroku",
                     "HTML",
@@ -519,6 +528,7 @@ class Profile(BaseModel):
                     "Docker",
                     "DrawIO",
                     "Facebook Ads",
+                    "Git",
                     "GitHub Actions",
                     "Google Ads",
                     "Heroku",
@@ -546,7 +556,7 @@ class Profile(BaseModel):
         #     end="2020/03",
         #     description="External audit of HelloFresh's Marketing Business Intelligence.",
         #     technologies={
-        #         "Others": ["Facebook Ads", "Google Ads", "Google Analytics"],
+        #         "Others": ["Facebook Ads", "Git", "Google Ads", "Google Analytics"],
         #     },
         # ),
         # WorkExperience(
@@ -609,6 +619,7 @@ class Profile(BaseModel):
                 "Others": [
                     "Docker",
                     "DrawIO",
+                    "Git",
                     "GitHub",
                     "Grafana",
                     "HTML",
@@ -645,7 +656,7 @@ class Profile(BaseModel):
         #             "Requests",
         #         ],
         #         "Others": [
-        #             "BitBucket", "Bootstrap CSS", "Google Cloud (GCP)", "HTML", "WebSockets",
+        #             "BitBucket", "Bootstrap CSS", "Git", "Google Cloud (GCP)", "HTML", "WebSockets",
         #         ],
         #     },
         # ),
@@ -677,6 +688,7 @@ class Profile(BaseModel):
                     "BigQuery",
                     "Docker",
                     "DrawIO",
+                    "Git",
                     "GitHub",
                     "OAuth 2.0",
                     "Presto",
@@ -696,7 +708,7 @@ class Profile(BaseModel):
         #     technologies={
         #         "Python": ["Pandas", "Pytest"],
         #         "Others": [
-        #             "Adobe Analytics", "Dash", "GitHub", "Facebook Ads", "Google Ads", "Google Analytics", "Google Tag Manager", "R", "Shiny",
+        #             "Adobe Analytics", "Dash", "Git","GitHub", "Facebook Ads", "Google Ads", "Google Analytics", "Google Tag Manager", "MSSQL", "R", "Shiny", "SqlServer"
         #         ],
         #     },
         # ),
@@ -712,7 +724,7 @@ class Profile(BaseModel):
         #     technologies={
         #         "Python": ["Pandas", "Pytest"],
         #         "Others": [
-        #             "AWS Redshift", "GitHub", "Google Ads", "Google Tag Manager", "Google Analytics",
+        #             "AWS Redshift", "Git", "GitHub", "Google Ads", "Google Tag Manager", "Google Analytics",
         #         ],
         #     },
         # ),
@@ -735,6 +747,7 @@ class Profile(BaseModel):
                     "BitBucket",
                     "DigitalOcean",
                     "Facebook Ads",
+                    "Git",
                     "Google Ads",
                     "Jenkins",
                 ],
