@@ -147,7 +147,7 @@ class Profile(BaseModel):
                 Technology(name="AWS Serverless", years=2),
                 Technology(name="Infrastructure as Code (IaC)", years=5),
                 Technology(name="CI/CD", years=8),
-                Technology(name="Docker", years=8),
+                Technology(name="Container / Containerization (Docker)", years=8),
                 Technology(name="Kubernetes", years=2),
             ],
         ),
@@ -159,7 +159,7 @@ class Profile(BaseModel):
                 Technology(name="REST APIs (incl. OpenAPI/Swagger)", years=6),
                 Technology(name="GraphQL APIs", years=2),
                 Technology(name="Event-Driven Software Architectures", years=4),
-                Technology(name="SQL Databases", years=7),
+                Technology(name="SQL / relational Databases", years=7),
                 Technology(name="NoSQL Databases", years=3),
             ],
         ),
@@ -239,12 +239,14 @@ class Profile(BaseModel):
             ],
             technologies={
                 "Python": [
+                    "Aiohttp",
                     "Alembic",
                     "Asyncio",
                     "Boto3",
                     "FactoryBoy",
                     "FastAPI",
                     "Httpx",
+                    "Multiprocessing",
                     "Mypy",
                     "Pika",
                     "Pydantic",
@@ -318,7 +320,7 @@ class Profile(BaseModel):
             bullet_points=[
                 "Integrated custom-built AI models to deliver real-time insights to customers",
                 "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
-                "Cost-effective, serverless, event-driven ingestion of GBs of image data on AWS",
+                "Cost-effective, scalable, serverless, event-driven ingestion of GBs of image data on AWS",
                 "Took proactive role in architecture and feature design",
                 "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
@@ -326,6 +328,7 @@ class Profile(BaseModel):
             ],
             technologies={
                 "Python": [
+                    "Aiohttp",
                     "AWS Lambda Powertools",
                     "Asyncio",
                     "Boto3",
@@ -334,12 +337,14 @@ class Profile(BaseModel):
                     "Locust",
                     "Motor",
                     "Mypy",
+                    "Multiprocessing",
                     "Poetry",
                     "PyMongo",
                     "Pydantic",
                     "Pytest",
                     "Ruff",
                     "Strawberry",
+                    "Unittest",
                 ],
                 "AWS": [
                     "API Gateway",
@@ -441,7 +446,7 @@ class Profile(BaseModel):
             technologies={
                 "Python": [
                     "Boto3",
-                    "Celery",
+                    "Celery (message queue)",
                     "Django",
                     "FactoryBoy",
                     "Gunicorn",
@@ -492,7 +497,7 @@ class Profile(BaseModel):
                     "Airflow",
                     "Alembic",
                     "Boto3",
-                    "Celery",
+                    "Celery (message queue)",
                     "Django",
                     "FactoryBoy",
                     "Gunicorn",
@@ -578,7 +583,7 @@ class Profile(BaseModel):
                 "Python": [
                     "Airflow",
                     "Boto3",
-                    "Celery",
+                    "Celery (message queue)",
                     "Django Rest Framework (DRF)",
                     "FactoryBoy",
                     "Gunicorn",
@@ -586,6 +591,7 @@ class Profile(BaseModel):
                     "Poetry",
                     "Pytest",
                     "Requests",
+                    "Unittest",
                     "Weasyprint",
                 ],
                 "AWS": [
