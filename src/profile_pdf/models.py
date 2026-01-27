@@ -234,12 +234,13 @@ class Profile(BaseModel):
             company="Vonovia SE",
             start="2025/03",
             end="2025/07",
-            description="Helped Vonovia to extend its internal elevator IoT platform to support external clients.",
+            description="Refactoring and extending Vonovia's internal elevator IoT platform to support external clients.",
             bullet_points=[
                 "Took proactive role in architecture and feature design",
                 "Collaborated directly with users and non-technical stakeholders",
-                "Developed features in a vast micro-service landscape",
-                "Upgraded tooling and improve app stability",
+                "Feature development in a vast microservice landscape",
+                "Introduced automated unit and integration tests to enable refactorings and ease ongoing development",
+                "Established code standards: linters, formatters, naming conventions, pre-commit, typing and enforced them as CI checks",
             ],
             technologies={
                 "Python": [
@@ -323,7 +324,7 @@ class Profile(BaseModel):
             company="Bayer AG",
             start="2023/01",
             end="2025/02",
-            description='Bayer\'s Crop Protection Innovation Lab builds AI-driven IoT products for farmers (<a href="https://magicscout.app/de-DE/magictrap">magicscout.app</a>).',
+            description='Bayer\'s Crop Protection Innovation Lab builds <a href="https://magicscout.app">AI products for farmers</a>. They gather plant images via drones and IoT devices directly in the field and analyze them in near real-time with AI to detect diseases and pests.',
             bullet_points=[
                 "Integrated custom-built AI models to deliver real-time insights to customers",
                 "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
@@ -331,7 +332,7 @@ class Profile(BaseModel):
                 "Took proactive role in architecture and feature design",
                 "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
-                "Reference expert for Python",
+                "Reference expert for Python: introduced and enforced standards across teams",
             ],
             technologies={
                 "Python": [
@@ -583,7 +584,7 @@ class Profile(BaseModel):
             bullet_points=[
                 "Onboarded first users after 2 months; deprecated Salesforce after 4 months",
                 "Managed campaigns worth >€100M after 1 year",
-                "Led the backend team and authored most backend code",
+                "Led the backend team, authored most backend code and defined coding quality standards",
                 "Collaborated closely with CTO, PO, other teams, and users",
                 "Drove architecture and feature discussions",
                 "Identified bottlenecks and proactively ideated new features",
