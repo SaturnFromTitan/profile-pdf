@@ -336,7 +336,7 @@ class Profile(BaseModel):
                 "Developed terraform modules to resolve common security issues across teams",
                 "Developed an internal framework to manage the lifetime of AWS Lambda-based Python services using dependency injection",
                 "Improved incident response times by reworking the alerting and monitoring systems (time series data)",
-                "Developed an end-to-end test infrastructure setup that ran against the whole application (cross team) on every merge to main",
+                "Built an end-to-end test setup that ran against the whole application (cross team) on every merge to main",
                 "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
                 "Reference expert for Python: introduced and enforced standards across teams",
