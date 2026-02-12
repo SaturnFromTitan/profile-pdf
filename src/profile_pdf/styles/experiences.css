@@ -1,14 +1,6 @@
-.page {
-  display: flex;
-  flex-direction: column;
-}
-
 .work-experience,
 .education {
   margin-bottom: 1.5rem;
-  /* Keep each work experience together on one page */
-  break-inside: avoid;
-  page-break-inside: avoid;
 }
 
 .work-experience-header,
@@ -72,4 +64,15 @@
   font-size: 0.9em;
   margin: 0;
   padding-left: 3.1mm;
+}
+
+.avoid-page-break {
+  /* Education only has a single entry, so it shouldn't break after the headline */
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.page-break-before {
+  break-before: page;
+  page-break-before: always;
 }
