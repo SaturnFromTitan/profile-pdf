@@ -49,4 +49,4 @@ set shell := ["bash", "-c"]
 
 # open the generated PDF
 @open:
-  open public/profile.pdf
+  open public/*.pdf

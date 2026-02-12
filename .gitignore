@@ -190,5 +190,5 @@ node_modules/
 # End Generation Here
 
 *.temp.css
-public/profile.pdf
+public/*.pdf
 .env

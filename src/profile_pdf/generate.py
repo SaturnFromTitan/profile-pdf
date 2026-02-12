@@ -12,25 +12,29 @@ from weasyprint.text.fonts import FontConfiguration
 from . import OUTPUT_DIR, REPO_ROOT, STYLES_DIR, TEMPLATES_DIR
 from .models import DEFAULT_PHONE_NUMBER, Education, Profile, WorkExperience
 
+DEFAULT_FILE_NAME = "profile.pdf"
+
 logger = logging.getLogger(__name__)
 
 
 def main() -> None:
-    buffer = _main()
+    # Optional configurations for customised local execution
+    env_file = REPO_ROOT / ".env"
+    config = dotenv.dotenv_values(env_file)
+    file_name = config.get("FILE_NAME") or DEFAULT_FILE_NAME
+    phone_number = config.get("PHONE_NUMBER") or DEFAULT_PHONE_NUMBER
+
+    # render PDF
+    buffer = _main(phone_number)
 
     # persist to disk
-    output_file = OUTPUT_DIR / "profile.pdf"
+    output_file = OUTPUT_DIR / file_name
     output_file.parent.mkdir(parents=True, exist_ok=True)
     output_file.write_bytes(buffer.getvalue())
 
 
-def _main() -> io.BytesIO:
+def _main(phone_number: str = DEFAULT_PHONE_NUMBER) -> io.BytesIO:
     target = io.BytesIO()
-
-    # Load .env file if it exists
-    env_file = REPO_ROOT / ".env"
-    config = dotenv.dotenv_values(env_file)
-    phone_number = config.get("PHONE_NUMBER") or DEFAULT_PHONE_NUMBER
 
     # Instantiate metadata
     profile = Profile(phone=phone_number)
