@@ -1,8 +1,6 @@
 <div class="page">
 
-  <!-- The .avoid-page-break wrapper here feels weird, but it does its job -->
-  <!-- Without it, the headline would be warped into the cover page for some reason 🤷 -->
-  <div class="avoid-page-break">
+  <div>
     <h2 class="content-headline">Excerpt of Work Experience</h2>
     {% for we in profile.work_experience %}
     <div class="work-experience">
@@ -35,7 +33,7 @@
     {% endfor %}
   </div>
 
-  <div class="avoid-page-break">
+  <div>
     <h2 class="content-headline">Education</h2>
     {% for ed in profile.education %}
     <div class="education">
