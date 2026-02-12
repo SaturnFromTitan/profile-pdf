@@ -236,11 +236,12 @@ class Profile(BaseModel):
             end="2025/07",
             description="Refactoring and extending Vonovia's internal elevator IoT platform to support external clients.",
             bullet_points=[
-                "Took proactive role in architecture and feature design",
-                "Collaborated directly with users and non-technical stakeholders",
                 "Feature development in a vast microservice landscape",
-                "Introduced automated unit and integration tests to enable refactorings and ease ongoing development",
-                "Established code standards: linters, formatters, naming conventions, pre-commit, typing and enforced them as CI checks",
+                "Took proactive role in architecture and feature design",
+                "Gather requirements directly with non-technical stakeholders to draft technical solutions to their problems",
+                "Introduced automated unit & integration tests to enable refactorings and ease development",
+                "Established code standards via linters, formatters and type checkers &  enforced them as CI checks",
+                "Modernize the tech stack from Python 3.7 to Python 3.12 (+ the associated libs and frameworks)",
             ],
             technologies={
                 "Python": [
@@ -300,7 +301,7 @@ class Profile(BaseModel):
                 "Evaluated and selected manifest v3 Chrome extension after comparing various alternative solutions",
                 "Managed private distribution to the Chrome Web Store",
                 "Delivered smooth launch within 2 weeks",
-                "Improved marketing team efficiency significantly through automation",
+                "Significantly improved the marketing team's efficiency and drove growth",
             ],
             technologies={
                 "TypeScript": [
@@ -331,15 +332,15 @@ class Profile(BaseModel):
             bullet_points=[
                 "Integrated custom-built AI models to deliver real-time insights to customers",
                 "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
-                "Cost-effective, scalable, serverless, event-driven ingestion of GBs of image data on AWS",
+                "Cost-effective, scalable, serverless, event-driven ingestion of 100s of GBs of image data daily into AWS",
                 "Took proactive role in architecture and feature design",
+                "Reference expert for Python: introduced and enforced standards across teams",
                 "Developed terraform modules to resolve common security issues across teams",
-                "Developed an internal framework to manage the lifetime of AWS Lambda-based Python services using dependency injection",
+                "Developed an internal framework to manage the lifecycle of AWS Lambda-based Python services using dependency injection",
                 "Improved incident response times by reworking the alerting and monitoring systems (time series data)",
-                "Built an end-to-end test setup that ran against the whole application (cross team) on every merge to main",
+                "Built an end-to-end test suite for the whole application (across teams)",
                 "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
-                "Reference expert for Python: introduced and enforced standards across teams",
             ],
             technologies={
                 "Python": [
@@ -407,7 +408,7 @@ class Profile(BaseModel):
                     "GitHub Actions",
                     "GitHub Pages",
                     "GitLab CI",
-                    "Go",
+                    "Go / Golang",
                     "HTML",
                     "ImageMagick",
                     "JavaScript",
@@ -632,6 +633,7 @@ class Profile(BaseModel):
                 ],
                 "Others": [
                     "Docker",
+                    "DocuSign",
                     "DrawIO",
                     "Git",
                     "GitHub",
@@ -645,6 +647,7 @@ class Profile(BaseModel):
                     "Nginx",
                     "OAuth 2.0",
                     "OpenAPI/Swagger",
+                    "Parquet",
                     "PostgreSQL",
                     "Pre-Commit",
                     "Prometheus",
@@ -741,6 +744,7 @@ class Profile(BaseModel):
                     "Google Analytics",
                     "Google Tag Manager",
                     "MSSQL",
+                    "Parquet",
                     "R",
                     "Shiny",
                     "SqlServer",
