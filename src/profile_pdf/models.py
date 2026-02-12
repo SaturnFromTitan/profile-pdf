@@ -331,15 +331,15 @@ class Profile(BaseModel):
             bullet_points=[
                 "Integrated custom-built AI models to deliver real-time insights to customers",
                 "Built backend for mobile apps and tens of thousands of IoT devices and DJI drones",
-                "Cost-effective, scalable, serverless, event-driven ingestion of GBs of image data on AWS",
+                "Cost-effective, scalable, serverless, event-driven ingestion of 100s of GBs of image data daily into AWS",
                 "Took proactive role in architecture and feature design",
+                "Reference expert for Python: introduced and enforced standards across teams",
                 "Developed terraform modules to resolve common security issues across teams",
                 "Developed an internal framework to manage the lifetime of AWS Lambda-based Python services using dependency injection",
                 "Improved incident response times by reworking the alerting and monitoring systems (time series data)",
                 "Built an end-to-end test setup that ran against the whole application (cross team) on every merge to main",
                 "Implemented GDPR-compliant data deletion processes",
                 "Maintained proactive cross-team communication",
-                "Reference expert for Python: introduced and enforced standards across teams",
             ],
             technologies={
                 "Python": [
@@ -632,6 +632,7 @@ class Profile(BaseModel):
                 ],
                 "Others": [
                     "Docker",
+                    "DocuSign",
                     "DrawIO",
                     "Git",
                     "GitHub",
@@ -645,6 +646,7 @@ class Profile(BaseModel):
                     "Nginx",
                     "OAuth 2.0",
                     "OpenAPI/Swagger",
+                    "Parquet",
                     "PostgreSQL",
                     "Pre-Commit",
                     "Prometheus",
@@ -741,6 +743,7 @@ class Profile(BaseModel):
                     "Google Analytics",
                     "Google Tag Manager",
                     "MSSQL",
+                    "Parquet",
                     "R",
                     "Shiny",
                     "SqlServer",
