@@ -236,11 +236,12 @@ class Profile(BaseModel):
             end="2025/07",
             description="Refactoring and extending Vonovia's internal elevator IoT platform to support external clients.",
             bullet_points=[
-                "Took proactive role in architecture and feature design",
-                "Collaborated directly with users and non-technical stakeholders",
                 "Feature development in a vast microservice landscape",
-                "Introduced automated unit and integration tests to enable refactorings and ease ongoing development",
-                "Established code standards: linters, formatters, naming conventions, pre-commit, typing and enforced them as CI checks",
+                "Took proactive role in architecture and feature design",
+                "Gather requirements directly with non-technical stakeholders to draft technical solutions to their problems",
+                "Introduced automated unit & integration tests to enable refactorings and ease development",
+                "Established code standards via linters, formatters and type checkers &  enforced them as CI checks",
+                "Modernize the tech stack from Python 3.7 to Python 3.12 (+ the associated libs and frameworks)",
             ],
             technologies={
                 "Python": [
