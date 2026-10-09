@@ -1,5 +1,5 @@
 # Base stage with common setup
-FROM python:3.12-slim as base
+FROM python:3.12-slim AS base
 
 # Install system dependencies required for WeasyPrint
 RUN apt-get update \
@@ -21,7 +21,7 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 
 # Test stage - includes dev dependencies
-FROM base as test
+FROM base AS test
 
 # Install Python dependencies including dev dependencies for testing
 RUN uv sync \
@@ -37,7 +37,7 @@ RUN uv sync \
     --no-editable
 
 # Production stage - only runtime dependencies
-FROM base as production
+FROM base AS production
 
 # Install only production dependencies
 RUN uv sync \
