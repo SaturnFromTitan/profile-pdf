@@ -182,7 +182,7 @@ class Profile(BaseModel):
             contract_type=ContractType.FREELANCE,
             company="secunet AG",
             start="2026/03",
-            end=None,
+            end="2026/08",
             location="Berlin",
             description="Production platform for ingesting, validating, and analyzing hardware performance data across software builds and hardware platforms.",
             bullet_points=[
