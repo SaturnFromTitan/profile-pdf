@@ -1,0 +1,2 @@
+Proof of GitHub connector write access.
+This file is intentionally non-functional and can be removed after reviewing the draft PR.
